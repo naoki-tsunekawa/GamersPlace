@@ -6,7 +6,7 @@ RSpec.describe "StaticPages", type: :system do
     # titleタグのテスト
     it "the title contains home" do
       visit "/static_pages/home"
-      expect(page).to have_title 'Home | GamersPlace'
+      expect(page).to have_title 'GamersPlace'
     end
 
     it "the title contains help" do
