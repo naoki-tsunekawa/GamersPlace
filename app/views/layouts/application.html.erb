@@ -7,9 +7,17 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'common/reset', :media => "all" %>
+    <%= stylesheet_link_tag 'common/header', :media => "all" %>
+    <%= stylesheet_link_tag 'common/footer', :media => "all" %>
+    <%= yield :css %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/header' %>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
