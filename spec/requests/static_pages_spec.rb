@@ -32,4 +32,12 @@ RSpec.describe "StaticPages", type: :request do
       expect(response).to have_http_status(:success)
     end
   end
+
+  # static_pages/contactへのリクエストテスト
+  describe "GET /contact" do
+    it "returns http success" do
+      get "/static_pages/contact"
+      expect(response).to have_http_status(:success)
+    end
+  end
 end
