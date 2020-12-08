@@ -1,2 +1,12 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'static_pages/home' %>
+<% end %>
+
 <% provide(:title) %>
-<h1>Gamers Place</h1>
+<div class="home-container">
+	<div class="home-text-container">
+		<h1>Welcome to the Sample App</h1>
+		<%= link_to "Sign up now!", '#', class: "btn btn-lg btn-primary" %>
+	</div>
+</div>
+
