@@ -12,7 +12,7 @@ RSpec.describe "StaticPages", type: :request do
   # static_pages/homeへのリクエストテスト
   describe "GET /home" do
     it "returns http success" do
-      get "/static_pages/home"
+      get root_path
       expect(response).to have_http_status(:success)
     end
   end
@@ -20,7 +20,7 @@ RSpec.describe "StaticPages", type: :request do
   # static_pages/helpへのリクエストテスト
   describe "GET /help" do
     it "returns http success" do
-      get "/static_pages/help"
+      get help_path
       expect(response).to have_http_status(:success)
     end
   end
@@ -28,7 +28,7 @@ RSpec.describe "StaticPages", type: :request do
   # static_pages/aboutへのリクエストテスト
   describe "GET /about" do
     it "returns http success" do
-      get "/static_pages/about"
+      get about_path
       expect(response).to have_http_status(:success)
     end
   end
@@ -36,7 +36,7 @@ RSpec.describe "StaticPages", type: :request do
   # static_pages/contactへのリクエストテスト
   describe "GET /contact" do
     it "returns http success" do
-      get "/static_pages/contact"
+      get contact_path
       expect(response).to have_http_status(:success)
     end
   end
