@@ -39,12 +39,23 @@ RSpec.describe User, type: :model do
     end
   end
 
-  # 重複するメールアドレス拒否のテスト
+  # 大文字小文字を区別しない一意性のテスト
   it "is invalid with registered email" do
     duplicate_user = user.dup
     # 全て大文字で保存する
     duplicate_user.email = user.email.upcase
     user.save
     expect(duplicate_user).to be_invalid
+  end
+
+  # passwordの最小文字テスト
+  it 'is invalid with no password' do
+    user.password = user.password_confirmation = ' ' * 6
+    expect(user).to be_invalid
+  end
+
+  it 'is invalid with 5-letter passwords' do
+    user.password = user.password_confirmation = 'a' * 5
+    expect(user).to be_invalid
   end
 end
