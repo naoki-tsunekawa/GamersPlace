@@ -4,7 +4,8 @@ RUN apt-get update -qq && apt-get install -y \
 		libpq-dev \
     node.js \
     yarn \
-		vim
+		vim \
+		imagemagick
 ENV LANG C.UTF-8
 WORKDIR /GamersPlace
 COPY Gemfile Gemfile.lock /GamersPlace/
