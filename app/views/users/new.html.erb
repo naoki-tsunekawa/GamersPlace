@@ -8,6 +8,8 @@
 <div class="signup_container">
   <div class="signup_form_container">
     <%= form_for(@user) do |f| %>
+			<%= render 'shared/error_messages' %>
+
 			<div class="form_common_wrapper form_name">
 				<%= f.label :name, class: "label_common" %>
 				<%= f.text_field :name, class: "input_common"  %>
