@@ -1,0 +1,25 @@
+.error_explanation {
+	color: red;
+}
+
+.alert-danger {
+	border-radius: 5px;
+	background-color: #fab1a0;
+	padding: 10px;
+}
+
+.ul-align-center {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.error_contents {
+	text-align: center;
+	padding: 10px;
+}
+
+.errors_text {
+	text-align: left;
+	margin-bottom: 5px;
+}
