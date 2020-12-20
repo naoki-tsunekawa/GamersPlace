@@ -1,2 +1,28 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'sessions/new' %>
+<% end %>
+
+<% provide(:title, "Log in") %>
+<h1 class="login_title">Log in</h1>
+
+<div class="login_container">
+  <div class="login_form_container">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+			<div class="form_common_wrapper">
+				<%= f.label :email, class: "label_common" %>
+				<%= f.email_field :email, class: "input_common" %>
+			</div>
+
+
+			<div class="form_common_wrapper">
+				<%= f.label :password, class: "label_common" %>
+				<%= f.password_field :password, class: "input_common" %>
+			</div>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p class="signup_link_text">New user? <%= link_to "Sign up now!", signup_path %></p>
+  </div>
+</div>
