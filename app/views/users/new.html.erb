@@ -10,24 +10,24 @@
     <%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages' %>
 
-			<div class="form_common_wrapper form_name">
+			<div class="form_common_wrapper">
 				<%= f.label :name, class: "label_common" %>
-				<%= f.text_field :name, class: "input_common"  %>
+				<%= f.text_field :name, class: "input_common" %>
 			</div>
 
-			<div class="form_common_wrapper orm_email">
-				<%= f.label :email, class: "label_common"  %>
-				<%= f.email_field :email, class: "input_common"   %>
+			<div class="form_common_wrapper">
+				<%= f.label :email, class: "label_common" %>
+				<%= f.email_field :email, class: "input_common" %>
 			</div>
 
-			<div class="form_common_wrapper form_password">
-				<%= f.label :password, class: "label_common"  %>
-				<%= f.password_field :password, class: "input_common"   %>
+			<div class="form_common_wrapper">
+				<%= f.label :password, class: "label_common" %>
+				<%= f.password_field :password, class: "input_common" %>
 			</div>
 
-			<div class="form_common_wrapper form_password_confirmation">
-				<%= f.label :password_confirmation, "Confirmation", class: "label_common"  %>
-				<%= f.password_field :password_confirmation, class: "input_common"   %>
+			<div class="form_common_wrapper">
+				<%= f.label :password_confirmation, "Confirmation", class: "label_common" %>
+				<%= f.password_field :password_confirmation, class: "input_common" %>
 			</div>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
