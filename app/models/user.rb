@@ -27,6 +27,8 @@ class User < ApplicationRecord
 
 	# 渡されたトークンがダイジェストと一致したらtrueを返す
 	def authenticated?(remember_token)
+		# remember_digestがnilの時は比較処理しない
+		return false if remember_digest.nil?
 		BCrypt::Password.new(remember_digest).is_password?(remember_token)
 	end
 
