@@ -13,7 +13,7 @@
 }
 
 .form_common_wrapper {
-	margin: 10px auto;
+	margin: 10px 0 auto;
 }
 
 .label_common {
@@ -25,6 +25,7 @@
 .input_common {
 	border: 1px solid black;
 	width: 100%;
+	padding: 5px;
 }
 
 .btn {
@@ -36,4 +37,16 @@
 .signup_link_text {
 	margin-top: 20px;
 	text-align: left;
+}
+
+// checkbox
+.checkbox {
+	display: block;
+  margin-top: 10px;
+	// margin-bottom: 10px;
+	text-align: left;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
 }
