@@ -1,0 +1,41 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'users/edit' %>
+<% end %>
+
+<% provide(:title, "Edit user") %>
+<h1 class="users_edit_title">Update your profile</h1>
+
+<div class="users_edit_container">
+  <div class="users_edit_form_container">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+			<div class="users_img">
+				<%= gravatar_for @user %>
+				<a href="http://gravatar.com/emails" target="_blank">change</a>
+			</div>
+
+			<div class="form_common_wrapper">
+				<%= f.label :name, class: "label_common"  %>
+				<%= f.text_field :name, class: 'input_common' %>
+			</div>
+
+			<div class="form_common_wrapper">
+				<%= f.label :email, class: "label_common"  %>
+				<%= f.email_field :email, class: 'input_common' %>
+			</div>
+
+			<div class="form_common_wrapper">
+				<%= f.label :password, class: "label_common"  %>
+				<%= f.password_field :password, class: 'input_common' %>
+			</div>
+
+			<div class="form_common_wrapper">
+				<%= f.label :password_confirmation, "Confirmation", class: "label_common" %>
+				<%= f.password_field :password_confirmation, class: 'input_common' %>
+			</div>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

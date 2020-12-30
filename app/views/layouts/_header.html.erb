@@ -9,7 +9,7 @@
 				<li class="nav-text"><%= link_to "Help", help_path %></li>
 				<% if logged_in? %>
 					<li class="nav-text"><%= link_to "Profile", current_user %></li>
-					<li class="nav-text"><%= link_to "Settings", '#' %></li>
+					<li class="nav-text"><%= link_to "Settings", edit_user_path(current_user) %></li>
 					<li class="nav-text"><%= link_to "Log out", logout_path, method: :delete %></li>
         <% else %>
           <li class="nav-text"><%= link_to "Log in", login_path %></li>
