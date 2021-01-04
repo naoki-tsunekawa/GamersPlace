@@ -4,6 +4,7 @@ RSpec.describe "UsersEdits", type: :system do
   let(:user) { FactoryBot.create(:user) }
 
   before do
+    # ログイン処理
     login_as(user)
     click_on 'Setting'
   end
