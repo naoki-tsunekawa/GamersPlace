@@ -74,4 +74,15 @@ RSpec.describe "Users", type: :request do
       expect(response).to redirect_to root_path
     end
   end
+
+  # フレンドリーフォワーディングのテスト
+  describe "friendly forwarding" do
+    it 'succeeds' do
+      # ログインしていない状態で編集画面へアクセスする
+      get edit_user_path(user)
+      # ログインすると編集画面へ遷移
+      log_in_as(user)
+      expect(response).to redirect_to edit_user_url(user)
+    end
+  end
 end
