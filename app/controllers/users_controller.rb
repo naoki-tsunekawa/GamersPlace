@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-  # edit,updateアクションはログイン状態でしか機能しない
-  before_action :logged_in_user, only: [:edit, :update]
+  # index,edit,updateアクションはログイン状態でしか機能しない
+  before_action :logged_in_user, only: [:index, :edit, :update]
   # 正しいユーザの時のみedit,updateアクションは機能しない
   before_action :correct_user, only: [:edit, :update]
+
+  def index
+    @users = User.all
+  end
 
   def show
     @user = User.find(params[:id])

@@ -26,6 +26,14 @@ RSpec.describe "Users", type: :request do
     end
   end
 
+  # ユーザ一覧のテスト
+  describe "GET /users" do
+    it "redirects login when not logged in" do
+      get users_path
+      expect(response).to redirect_to login_url
+    end
+  end
+
   # ユーザ編集のテスト
   describe "PATCH /users/:id" do
     # ログイン状態の判別のためのテスト
