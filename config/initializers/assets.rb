@@ -15,5 +15,6 @@ Rails.application.config.assets.precompile += %w(
 	common/*
 	static_pages/*
 	users/*
+	users/index.css
 	sessions/*
 )
