@@ -19,3 +19,16 @@ $gray-lighter: #ecf0f1;
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+// ページネーション
+.pagination {
+	width: 100%;
+	text-align: center;
+	padding-top: 20px;
+	span {
+		padding: 0 5px;
+	}
+	a {
+		text-decoration: none;
+	}
+}
