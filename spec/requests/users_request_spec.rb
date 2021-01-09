@@ -3,16 +3,17 @@ require 'rails_helper'
 RSpec.describe "Users", type: :request do
   let(:user) { FactoryBot.create(:user) }
   let(:other_user) { FactoryBot.create(:user, email: 'other_user@example.com') }
+  let!(:admin_user) { FactoryBot.create(:user, email: 'admin_user@example.com', admin: true) }
 
-  describe "GET /new" do
-    it "returns http success" do
+  describe 'GET /new' do
+    it 'returns http success' do
       get signup_path
       expect(response).to have_http_status(:success)
     end
   end
 
   # 有効なユーザの登録テスト
-  describe "POST /users" do
+  describe 'POST /users' do
     let(:user) { FactoryBot.attributes_for(:user) }
     it "adds new user with correct signup information" do
       aggregate_failures do
@@ -27,15 +28,15 @@ RSpec.describe "Users", type: :request do
   end
 
   # ユーザ一覧のテスト
-  describe "GET /users" do
-    it "redirects login when not logged in" do
+  describe 'GET /users' do
+    it 'redirects login when not logged in' do
       get users_path
       expect(response).to redirect_to login_url
     end
   end
 
   # ユーザ編集のテスト
-  describe "PATCH /users/:id" do
+  describe 'PATCH /users/:id' do
     # ログイン状態の判別のためのテスト
     before do
       log_in_as(user)
@@ -63,7 +64,7 @@ RSpec.describe "Users", type: :request do
   end
 
   # 正しいユーザのみ編集できるかのテスト
-  describe "before_action: :correct_user" do
+  describe 'before_action: :correct_user' do
 
     before do
       log_in_as(other_user)
@@ -84,13 +85,39 @@ RSpec.describe "Users", type: :request do
   end
 
   # フレンドリーフォワーディングのテスト
-  describe "friendly forwarding" do
+  describe 'friendly forwarding' do
     it 'succeeds' do
       # ログインしていない状態で編集画面へアクセスする
       get edit_user_path(user)
       # ログインすると編集画面へ遷移
       log_in_as(user)
       expect(response).to redirect_to edit_user_url(user)
+    end
+  end
+
+  # ユーザ削除のテスト
+  describe "delete /users/:id" do
+
+    it 'fails when not admin' do
+      log_in_as(user)
+      aggregate_failures do
+        expect do
+          delete user_path(admin_user)
+        end.to change(User, :count).by(0)
+        expect(response).to redirect_to root_url
+      end
+    end
+
+    it 'succeds when user is administrator' do
+      log_in_as(admin_user)
+      # 削除用のユーザを作成
+      user
+      aggregate_failures do
+        expect do
+          delete user_path(user)
+        end.to change(User, :count).by(-1)
+        expect(response).to redirect_to users_url
+      end
     end
   end
 end

@@ -5,8 +5,9 @@ FactoryBot.define do
     password { "foobar" }
     password_confirmation { "foobar" }
 
-    # FactoryBot.create(:user, :admin)の形で呼び出せる
-    trait :admin do
+    factory :admin do
+      name { Faker::Name.name }
+      email { Faker::Internet.email }
       admin { true }
     end
 
