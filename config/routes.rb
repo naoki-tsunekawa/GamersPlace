@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+  get 'games/new'
   get 'sessions/new'
   get 'users/new'
   # ルートページ
   root 'static_pages#home'
 
+  # user
   get '/help', to:'static_pages#help'
   get '/about', to:'static_pages#about'
   get '/contact', to:'static_pages#contact'
@@ -12,5 +14,10 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+
+  # game
+  get '/game_create', to: 'games#new'
+  resources :games
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

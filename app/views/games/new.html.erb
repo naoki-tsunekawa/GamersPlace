@@ -1,0 +1,26 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'games/new' %>
+<% end %>
+
+<% provide(:title, 'Game Create') %>
+<h1 class="game_title">Game Create</h1>
+
+<div class="game_container">
+  <div class="game_form_container">
+    <%= form_for(@game) do |f| %>
+			<%# <%= render 'shared/error_messages' %>
+
+			<div class="form_common_wrapper">
+				<%= f.label :title, class: "label_common" %>
+				<%= f.text_field :title, class: "input_common" %>
+			</div>
+
+			<div class="form_common_wrapper">
+				<%= f.label :description, class: "label_common" %>
+				<%= f.text_field :description, class: "input_common" %>
+			</div>
+
+      <%= f.submit "Create Game", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

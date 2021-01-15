@@ -17,4 +17,5 @@ Rails.application.config.assets.precompile += %w(
 	users/*
 	users/index.css
 	sessions/*
+	games/*
 )
