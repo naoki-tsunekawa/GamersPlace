@@ -20,6 +20,11 @@
 				<%= f.text_field :description, class: "input_common" %>
 			</div>
 
+			<div class="form-group">
+        <%= f.label :game_image, '画像' %>
+        <%= f.file_field :game_image, accept: 'image/jpeg,image/gif,image/png' %>
+			</div>
+
       <%= f.submit "Create Game", class: "btn btn-primary" %>
     <% end %>
   </div>
