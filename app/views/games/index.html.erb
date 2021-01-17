@@ -6,6 +6,9 @@
 		<% @games.each do |game| %>
 			<li class="game_contents">
 				<%= link_to game.title, game %>
+				<div class="content_game_imge">
+					<img class="game_img" src="<%= "#{game.game_image}" %>">
+				</div>
 			</li>
 		<% end %>
 	</ul>
