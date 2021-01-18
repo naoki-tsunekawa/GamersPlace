@@ -1,5 +1,6 @@
 class GamesController < ApplicationController
-  before_action :admin_user, only: :destroy
+  before_action :admin_user, only: [:destroy, :edit, :update]
+
   def new
     @game = Game.new
   end
@@ -26,6 +27,18 @@ class GamesController < ApplicationController
     Game.find(params[:id]).destroy
     flash[:success] = "Game board deleted"
     redirect_to games_url
+  end
+
+  def edit
+    @game = Game.find(params[:id])
+  end
+
+  def update
+    @game = Game.find(params[:id])
+    if @game.update_attributes(game_params)
+      flash[:success] = "Game board updated"
+      redirect_to @game
+    end
   end
 
   private
