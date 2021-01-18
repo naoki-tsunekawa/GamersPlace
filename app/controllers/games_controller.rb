@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :admin_user, only: :destroy
   def new
     @game = Game.new
   end
@@ -18,7 +19,13 @@ class GamesController < ApplicationController
   end
 
   def show
-    @user = Game.find(params[:id])
+    @game = Game.find(params[:id])
+  end
+
+  def destroy
+    Game.find(params[:id]).destroy
+    flash[:success] = "Game board deleted"
+    redirect_to games_url
   end
 
   private
