@@ -9,12 +9,15 @@
 	<div class="game_show_content_wrapper">
 		<div class="game_show_text">
 			<%= @game.title %>
-			<% if admin_logged_in? %>
-				| <%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>
-			<% end %>
 		</div>
 		<div class="game_image_wrapper">
 			<img class="game_show_img" src="<%= "#{@game.game_image}" %>">
+		</div>
+		<div class="game_edit_container">
+			<% if admin_logged_in? %>
+				<%= link_to "edit", edit_game_path(@game)%> |
+				<%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>
+			<% end %>
 		</div>
 	</div>
 </div>
