@@ -1,15 +1,23 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'games/index' %>
+<% end %>
+
 <% provide(:title, 'All Games') %>
 <h1 class="games_index_title">All games</h1>
 
 <div class="games_container">
-	<ul class="games_list">
+	<div class="game_card">
 		<% @games.each do |game| %>
-			<li class="game_contents">
-				<%= link_to game.title, game %>
-				<div class="content_game_imge">
+			<%= link_to(game_path(game), class: 'game_content') do %>
+				<div class="item_wrapper">
 					<img class="game_img" src="<%= "#{game.game_image}" %>">
+					<div class="game_textbox">
+							<div class="game_titletext">
+								<%= game.title %>
+							</div>
+						</div>
 				</div>
-			</li>
+			<% end %>
 		<% end %>
-	</ul>
+	</div>
 </div>
