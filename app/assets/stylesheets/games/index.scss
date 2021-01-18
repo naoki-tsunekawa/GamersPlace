@@ -1,0 +1,35 @@
+.games_index_title {
+	text-align:center;
+}
+.games_container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.game_card{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	gap: 15px;
+	margin: 20px 0;
+}
+
+.game_content	{
+	text-decoration: none;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.item_wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+
+.game_titletext {
+	font-size: 20px;
+  font-weight: bold;
+	line-height: 125%;
+	margin-bottom: 10px;
+	color: black;
+}
