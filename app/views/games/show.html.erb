@@ -14,7 +14,7 @@
 			<img class="game_show_img" src="<%= "#{@game.game_image}" %>">
 		</div>
 		<div class="game_edit_container">
-			<% if admin_logged_in? %>
+			<% if current_user.admin? %>
 				<%= link_to "edit", edit_game_path(@game)%> |
 				<%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>
 			<% end %>

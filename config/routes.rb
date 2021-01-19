@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   resources :users
 
   # game
-  get '/game_create', to: 'games#new'
+  # get '/game_create', to: 'games#new'
   resources :games
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
