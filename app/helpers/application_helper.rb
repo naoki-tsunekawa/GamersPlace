@@ -8,9 +8,4 @@ module ApplicationHelper
       page_title + " | " + base_title
     end
   end
-
-  # 管理者ユーザかどうか確認
-  def admin_logged_in?
-		current_user.admin?
-	end
 end

@@ -1,4 +1,7 @@
 class GamesController < ApplicationController
+  # index,edit,update,destroyアクションはログイン状態でしか機能しない
+  before_action :logged_in_user, only: [:new, :create, :index, :edit, :update, :destroy]
+  # 管理者ユーザのみ使用可能
   before_action :admin_user, only: [:destroy, :edit, :update]
 
   def new
@@ -46,4 +49,10 @@ class GamesController < ApplicationController
   def game_params
     params.require(:game).permit(:title, :description, :game_image)
   end
+
+  # 管理者かどうか確認
+  def admin_user
+    current_user.admin?
+  end
+
 end

@@ -56,16 +56,16 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 
-  # ログイン済みユーザーかどうか確認
-  def logged_in_user
-    # ログイン済みではなかった場合
-    unless logged_in?
-      # アクセスしようとしたURLを記憶
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
+  # # ログイン済みユーザーかどうか確認
+  # def logged_in_user
+  #   # ログイン済みではなかった場合
+  #   unless logged_in?
+  #     # アクセスしようとしたURLを記憶
+  #     store_location
+  #     flash[:danger] = "Please log in."
+  #     redirect_to login_url
+  #   end
+  # end
 
   # 正しいユーザーかどうか確認
   def correct_user
