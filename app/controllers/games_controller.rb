@@ -50,9 +50,4 @@ class GamesController < ApplicationController
     params.require(:game).permit(:title, :description, :game_image)
   end
 
-  # 管理者かどうか確認
-  def admin_user
-    current_user.admin?
-  end
-
 end
