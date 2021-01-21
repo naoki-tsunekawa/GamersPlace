@@ -14,4 +14,16 @@ RSpec.describe Game, type: :model do
     expect(game).to be_invalid
   end
 
+  # titleの長さに対するテスト
+  it 'is invalid with 51-letter titles' do
+    game.title = 'a' * 51
+    expect(game).to be_invalid
+  end
+
+  # descriptionの長さに対するテスト
+  it 'is invalid with 300-letter descriptions' do
+    game.description = 'a' * 301
+    expect(game).to be_invalid
+  end
+
 end

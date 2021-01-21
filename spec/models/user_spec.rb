@@ -25,7 +25,7 @@ RSpec.describe User, type: :model do
     expect(user).to be_invalid
   end
 
-  it 'is invalid with 51-letter emails' do
+  it 'is invalid with 255-letter emails' do
     user.email = 'a' * 244 + '@example.com'
     expect(user).to be_invalid
   end
