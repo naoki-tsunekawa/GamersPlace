@@ -5,6 +5,12 @@
 <% provide(:title, 'All Games') %>
 <h1 class="games_index_title">All games</h1>
 
+<% if current_user.admin? %>
+	<div class="new_game_wrapper">
+		<%= link_to "New Game Board!", new_game_path %>
+	</div>
+<% end %>
+
 <div class="games_container">
 	<div class="game_card">
 		<% @games.each do |game| %>
