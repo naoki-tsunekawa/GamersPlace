@@ -27,7 +27,7 @@ RSpec.describe "UsersSignups", type: :system do
     aggregate_failures do
       expect(current_path).to eq user_path(User.last)
       expect(has_css?('.alert-success')).to be_truthy
-      visit current_path # <= 再読み込みを再現しています。
+      visit current_path # 再読み込み
       expect(has_css?('.alert-success')).to be_falsy
     end
   end

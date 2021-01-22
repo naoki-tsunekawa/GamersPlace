@@ -9,7 +9,7 @@
 <div class="game_container">
   <div class="game_form_container">
     <%= form_for(@game) do |f| %>
-			<%# <%= render 'shared/error_messages' %>
+			<%= render 'shared/error_messages', object: f.object %>
 
 			<div class="form_common_wrapper">
 				<%= f.label :title, class: "label_common" %>
