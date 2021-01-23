@@ -19,4 +19,12 @@ module SystemHelper
     fill_in 'Password', with: user.password
     click_button 'Log in'
   end
+
+  def create_game_board(game)
+    visit new_game_path
+    fill_in 'Title', with: game.title
+    fill_in 'Description', with: game.description
+    click_on 'Create Game'
+  end
+
 end
