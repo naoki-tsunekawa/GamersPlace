@@ -41,6 +41,8 @@ class GamesController < ApplicationController
     if @game.update_attributes(game_params)
       flash[:success] = "Game board updated"
       redirect_to @game
+    else
+      render 'edit'
     end
   end
 

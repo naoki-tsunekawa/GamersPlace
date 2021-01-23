@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe "GamesNews", type: :system do
-  let(:game) { FactoryBot.create(game) }
   let!(:admin_user) { FactoryBot.create(:user, email: 'admin_user@example.com', admin: true) }
 
   before do
