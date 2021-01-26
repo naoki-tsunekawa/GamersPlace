@@ -12,7 +12,7 @@ User.create!(name:  "Example User",
 	password_confirmation: "foobar",
 	admin: true)
 
-99.times do |n|
+10.times do |n|
 name  = Faker::Name.name
 email = "example-#{n+1}@railstutorial.org"
 password = "password"
@@ -21,3 +21,14 @@ User.create!(name:  name,
 		password:              password,
 		password_confirmation: password)
 end
+
+Game.create!(title: "Sample Game Board",
+	description: "Sample description",
+	game_image: File.open("./public/images/600×400.png"))
+
+5.times do |i|
+	content = "sample content"
+	Post.create!(content: "sample content #{i+1}", user_id: User.find(i+1), game_id: Game.first)
+end
+
+
