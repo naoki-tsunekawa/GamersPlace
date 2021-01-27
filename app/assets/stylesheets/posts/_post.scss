@@ -1,0 +1,21 @@
+.post_list_content {
+	list-style-type: none;
+	border: solid 1px #2c3e50;
+	margin: 10px;
+}
+
+.post_user_content {
+	text-decoration: none;
+	color: black;
+}
+
+.post_content_wrapper {
+	font-size: 18px;
+	padding: 10px 30px;
+}
+
+.post_timestamp_wrapper {
+	opacity: 0.6;
+	text-align: right;
+	padding: 5px;
+}

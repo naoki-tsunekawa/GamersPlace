@@ -1,3 +1,5 @@
+@import "posts/post.scss";
+
 .game_title {
 	text-align:left;
 	margin: 10px 40px;
@@ -22,3 +24,11 @@
 	text-align: center;
 }
 
+.post_container {
+	width: 50%;
+	margin: 0 auto;
+}
+
+.posts_list {
+	text-decoration: none;
+}
