@@ -20,10 +20,10 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="col-md-8">
+	<div class="post_container">
 		<% if @game.posts.any? %>
-      <h3>posts (<%= @game.posts.count %>)</h3>
-      <ol class="posts">
+      <h3>Posts (<%= @game.posts.count %>)</h3>
+      <ol class="posts_list">
         <%= render @posts %>
       </ol>
       <%# <%= will_paginate @posts %>
