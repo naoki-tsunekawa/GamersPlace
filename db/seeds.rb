@@ -26,9 +26,12 @@ Game.create!(title: "Sample Game Board",
 	description: "Sample description",
 	game_image: File.open("./public/images/600×400.png"))
 
+user = User.first
+game = Game.first
+
 5.times do |i|
 	content = "sample content"
-	Post.create!(content: "sample content #{i+1}", user_id: User.find(i+1), game_id: Game.first)
+	Post.create!(content: "sample content", user_id: user.id, game_id: game.id)
 end
 
 
