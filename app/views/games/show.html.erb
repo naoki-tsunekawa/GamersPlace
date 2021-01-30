@@ -20,13 +20,13 @@
 			<% end %>
 		</div>
 	</div>
+	<%= render 'shared/post_form' %>
 	<div class="post_container">
 		<% if @game.posts.any? %>
       <h3>Posts (<%= @game.posts.count %>)</h3>
       <ol class="posts_list">
         <%= render @posts %>
       </ol>
-      <%# <%= will_paginate @posts %>
     <% end %>
   </div>
 </div>
