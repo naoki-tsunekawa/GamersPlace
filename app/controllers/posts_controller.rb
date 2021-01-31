@@ -2,12 +2,16 @@ class PostsController < ApplicationController
 	before_action :logged_in_user, only: [:create, :destroy]
 
   def create
-    @post = Posts.build(post_params)
+    # @game = Game.find(params[:game_id])
+    # @user = User.find(params[:user_id])
+    @game = Game.find(params[:post][:game_id])
+    @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Post created!"
-      redirect_to root_url
+      redirect_to game_path(@game)
     else
-      render 'static_pages/home'
+      flash[:danger] = "メッセージを入力してください。"
+      redirect_to game_path(@game)
     end
   end
 
