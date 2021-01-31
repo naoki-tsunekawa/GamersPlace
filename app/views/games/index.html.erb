@@ -14,7 +14,7 @@
 <div class="games_container">
 	<div class="game_card">
 		<% @games.each do |game| %>
-			<%= link_to(game_path(game), class: 'game_content') do %>
+			<%= link_to(game_path(game.id), class: 'game_content') do %>
 				<div class="item_wrapper">
 					<img class="game_img" src="<%= "#{game.game_image}" %>">
 					<div class="game_textbox">

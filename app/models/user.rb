@@ -1,5 +1,6 @@
 class User < ApplicationRecord
 	has_many :posts, dependent: :destroy
+	has_many :games, through: :posts
 	attr_accessor :remember_token
 	before_save { self.email = email.downcase }
 
