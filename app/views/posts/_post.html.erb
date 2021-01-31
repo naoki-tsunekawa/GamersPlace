@@ -11,4 +11,7 @@
   <div class="post_timestamp_wrapper">
     <%= time_ago_in_words(post.created_at) %> ago
   </div>
+  <% if current_user?(post.user) %>
+      <%= link_to "delete", post, method: :delete, data: { confirm: "You sure?" } %>
+  <% end %>
 </li>

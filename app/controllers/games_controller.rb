@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
-  # index,edit,update,destroyアクションはログイン状態でしか機能しない
-  before_action :logged_in_user, only: [:new, :create, :index, :edit, :update, :destroy]
+  # index,edit,show,update,destroyアクションはログイン状態でしか機能しない
+  before_action :logged_in_user, only: [:new, :create, :index, :show, :edit, :update, :destroy]
   # 管理者ユーザのみ使用可能
   before_action :admin_user, only: [:destroy, :edit, :update]
 
