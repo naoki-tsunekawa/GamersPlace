@@ -30,5 +30,20 @@ RSpec.describe "Posts", type: :request do
         expect(delete_request).to redirect_to login_url
       end
     end
+
+    # 間違ったユーザの削除テスト
+    context "when logged in user tyies to delete another user's post" do
+      let(:user) { FactoryBot.create(:user) }
+
+      before { log_in_as(user) }
+
+      it "doesn't change post's count" do
+        expect { delete_request }.to change(Post, :count).by(0)
+      end
+
+      it "redirects to root_url" do
+        expect(delete_request).to redirect_to root_url
+      end
+    end
   end
 end

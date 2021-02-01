@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post.destroy
     @game = Game.find(@post.game_id)
     flash[:success] = "post deleted"
-    redirect_to request.referrer || game_path(@game)
+    redirect_to request.referrer || root_url
   end
 
   private
