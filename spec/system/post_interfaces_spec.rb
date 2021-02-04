@@ -1,7 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe "PostInterfaces", type: :system do
+RSpec.describe "PostInterfaces", js: true, type: :system do
   let(:user) { FactoryBot.create(:user) }
+  let(:other_user) { FactoryBot.create(:other_user)}
   let(:game) { FactoryBot.create(:game) }
 
   before do
@@ -24,20 +25,20 @@ RSpec.describe "PostInterfaces", type: :system do
     expect(has_css?('.alert-success')).to be_truthy
   end.to change(Post, :count).by(1)
 
-  # # 投稿を削除する
-  # accept_confirm do
-  #   click_link "delete"
-  # end
-  # expect do
-  #   expect(page.accept_confirm).to eq "You sure?"
-  #   expect(page).to have_content "post deleted"
-  #   expect(current_path).to eq game_path(Game.last)
-  #   expect(has_css?('.alert-success')).to be_truthy
-  # end.to change(Post, :count).by(-1)
-
-  # 違うユーザーのプロフィールにアクセス (削除リンクがないことを確認)
-
+  # 投稿を削除する
+  page.accept_confirm do
+    click_link "delete"
   end
+  expect do
+    expect(page).to have_content "post deleted"
+    expect(current_path).to eq game_path(Game.last)
+    expect(has_css?('.alert-success')).to be_truthy
+  end.to change(Post, :count).by(-1)
 
-  pending "add some scenarios (or delete) #{__FILE__}"
+  # 違うユーザーで掲示板にアクセス (削除リンクがないことを確認)
+  click_on "Log out"
+  login_as(other_user)
+  visit game_path(Game.last)
+  expect(page).not_to have_link "delete"
+  end
 end
