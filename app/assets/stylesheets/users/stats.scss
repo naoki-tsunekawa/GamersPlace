@@ -1,0 +1,18 @@
+.ststs_link_btn {
+	text-decoration: none;
+	color: black;
+
+	&:hover {
+		opacity: 0.6;
+	}
+}
+
+.stats_following_container {
+	display: inline-block;
+	margin: 5px;
+}
+
+.stats_followers_container {
+	display: inline-block;
+	margin: 5px;
+}
