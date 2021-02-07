@@ -1,0 +1,27 @@
+@import "users/user_details.scss";
+@import "users/user.scss";
+
+.show_follow_container {
+	display: flex;
+	align-items:stretch;
+}
+
+.user_detail_wrapper {
+	margin-right: 60px;
+}
+
+.user_list_container {
+	width: 50%;
+	margin-top: 30px;
+	padding: 0 30px;
+}
+
+.user_follow_title {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.users_list {
+	list-style: none;
+	margin-bottom: 20px;
+}
