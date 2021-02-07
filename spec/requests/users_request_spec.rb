@@ -120,4 +120,18 @@ RSpec.describe "Users", type: :request do
       end
     end
   end
+
+  #ログイン状態のテスト
+  describe "before_action: :logged_in_user" do
+    it 'redirects following when not logged in' do
+      get following_user_path(user)
+      expect(response).to redirect_to login_url
+    end
+
+    it 'redirects followers when not logged in' do
+      get followers_user_path(user)
+      expect(response).to redirect_to login_url
+    end
+  end
+
 end

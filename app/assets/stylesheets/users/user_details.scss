@@ -1,0 +1,16 @@
+@import "users/stats.scss";
+
+.user__container {
+	margin: 50px 20px;
+}
+
+.user__name-text {
+	display: inline-block;
+	vertical-align:	top;
+}
+
+.btn {
+	margin-top: 20px;
+	padding: 5px 100px;
+	border: 1px solid black;
+}

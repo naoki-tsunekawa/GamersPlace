@@ -1,0 +1,26 @@
+<% content_for :css do %>
+	<%= stylesheet_link_tag 'users/show_follow' %>
+<% end %>
+
+<% provide(:title, @title) %>
+<div class="show_follow_container">
+	<div class="user_detail_wrapper">
+		<%= render 'user_details' %>
+		<% if @users.any? %>
+			<div class="user_avatars">
+				<% @users.each do |user| %>
+					<%= link_to gravatar_for(user, size: 30), user %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+
+	<div class="user_list_container">
+		<h3 class="user_follow_title"><%= @title %></h3>
+		<% if @users.any? %>
+			<ul class="users_list">
+				<%= render @users %>
+			</ul>
+		<% end %>
+	</div>
+</div>

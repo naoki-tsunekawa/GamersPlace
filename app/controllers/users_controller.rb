@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   # index,edit,update,destroyアクションはログイン状態でしか機能しない
-  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
   # 正しいユーザの時のみedit,updateアクションは機能しない
   before_action :correct_user, only: [:edit, :update]
   # adminユーザのみdestroyアクションは機能しない
@@ -48,6 +48,21 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  # following
+  def following
+    @title = "Following"
+    @user  = User.find(params[:id])
+    @users = @user.following.page(params[:page]).per(10)
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    @users = @user.followers.page(params[:page]).per(10)
+    render 'show_follow'
   end
 
   private
