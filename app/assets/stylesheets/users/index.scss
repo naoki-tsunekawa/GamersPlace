@@ -1,4 +1,4 @@
-$gray-lighter: #ecf0f1;
+@import "users/user.scss";
 
 .users_index_title {
 	text-align:center;
@@ -7,17 +7,6 @@ $gray-lighter: #ecf0f1;
 .users_container {
 	width: 40%;
 	margin: 10px auto;
-}
-
-.users_list {
-  list-style: none;
-  margin: 0;
-  .user_contents {
-		overflow: auto;
-		margin-top: 30px;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
 }
 
 // ページネーション
