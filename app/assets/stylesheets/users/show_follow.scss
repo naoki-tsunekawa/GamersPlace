@@ -7,18 +7,24 @@
 }
 
 .user_detail_wrapper {
-	margin-right: 60px;
+	padding-left: 20px;
 }
 
-.user_list_container {
-	width: 50%;
-	margin-top: 30px;
-	padding: 0 30px;
+.users_container {
+	width: 40%;
+	margin: 10px auto;
+
+	a {
+		text-decoration: none;
+		color: black;
+	}
 }
+
 
 .user_follow_title {
 	font-size: 30px;
 	margin-bottom: 20px;
+	text-align: left;
 }
 
 .users_list {

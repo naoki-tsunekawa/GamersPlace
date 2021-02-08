@@ -15,12 +15,13 @@
 		<% end %>
 	</div>
 
-	<div class="user_list_container">
+	<div class="users_container">
 		<h3 class="user_follow_title"><%= @title %></h3>
 		<% if @users.any? %>
 			<ul class="users_list">
 				<%= render @users %>
 			</ul>
+			<%= paginate @users %>
 		<% end %>
 	</div>
 </div>
