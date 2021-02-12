@@ -4,13 +4,7 @@
 
 <% provide(:title) %>
 <% if logged_in? %>
-  <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <%= render 'shared/user_info' %>
-      </section>
-    </aside>
-  </div>
+  <%= render 'users/user_details' %>
 <% else %>
 	<div class="home-container">
 		<div class="home-text-container">
