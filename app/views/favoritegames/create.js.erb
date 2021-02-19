@@ -1,0 +1,2 @@
+<!-- ｊ メソッドで、JSとして認識してくれて、非同期で更新してくれる -->
+$("#favorite_<%= @game.id %>").html("<%= escape_javascript(render('favoritegames/favoritegame'), locals: { game: @game }) %>");

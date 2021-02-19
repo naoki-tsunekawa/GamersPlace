@@ -1,0 +1,1 @@
+$("#favorite_<%= @game.id %>").html("<%= escape_javascript(render('favoritegames/favoritegame'), locals: { game: @game }) %>");

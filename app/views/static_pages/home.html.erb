@@ -13,3 +13,10 @@
 		</div>
 	</div>
 <% end %>
+
+<% if @favorite_list.present? %>
+  <% @favorite_list.each do |post| %>
+    <%= post.title %>
+    <%= post.content %>
+  <% end %>
+<% end %>

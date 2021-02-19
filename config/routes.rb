@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'favoritegames/create'
+  get 'favoritegames/destroy'
   get 'games/new'
   get 'sessions/new'
   get 'users/new'
@@ -18,14 +20,13 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
-    get :favorites, on: :collection
+    get :favoritegames, on: :collection
   end
   # game
   resources :games do
-    resource :favorites, only: [:create, :destroy]
+    resource :favoritegames, only: [:create, :destroy]
   end
 
-  end
   # post
   resources :posts, only: [:create, :destroy]
   # relationship
