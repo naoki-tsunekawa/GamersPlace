@@ -15,8 +15,8 @@
 <% end %>
 
 <% if @favorite_list.present? %>
-  <% @favorite_list.each do |post| %>
-    <%= post.title %>
-    <%= post.content %>
+  <% @favorite_list.each do |game| %>
+    <%= game.title %>
+    <%= game.content %>
   <% end %>
 <% end %>
