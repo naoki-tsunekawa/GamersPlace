@@ -2,9 +2,15 @@
     <%= stylesheet_link_tag 'favoritegames/favoritegame' %>
 <% end %>
 
-<div id="<%= @game.id %> favorite">
+<div id="favoritegame_<%= @game.id %>">
   <% if !Favoritegame.exists?(user: current_user, game_id: @game.id) %>
-    <%= link_to game_favoritegames_path(@game), method: :game, remote: true, class: "favorite-btn favorite-game" do %>
+		<a href="<%= game_favoritegames_path (@game)%>">
+		<strong>
+			<%= @game.favoritegames.length  %>
+		</strong>
+		お気に入り
+		</a>
+    <%= link_to game_favoritegames_path(@game), method: :post, remote: true, class: "favorite-btn favorite-game" do %>
       <div class="i far fa-thumbs-up">
         <span>いいね！</span>
         <%= @game.favoritegames.length  %>
