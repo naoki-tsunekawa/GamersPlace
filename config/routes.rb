@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'favoritegames/create'
-  get 'favoritegames/destroy'
-  get 'games/new'
-  get 'sessions/new'
-  get 'users/new'
   # ルートページ
   root 'static_pages#home'
 
