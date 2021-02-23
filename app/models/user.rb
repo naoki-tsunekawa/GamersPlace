@@ -59,4 +59,9 @@ class User < ApplicationRecord
     following.include?(other_user)
   end
 
+	# 既にお気に入りされているゲームかどうか調べる
+	def already_favorited?(game)
+		self.favoritegames.exists?(game_id: game.id)
+	end
+
 end

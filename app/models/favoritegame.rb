@@ -3,6 +3,6 @@ class Favoritegame < ApplicationRecord
   belongs_to :game
 
   # バリデーション
-  # 同じ投稿を複数回お気に入り登録させないため。
+  # 同じ投稿を複数回お気に入り登録させない
   validates_uniqueness_of :game_id, scope: :user_id
 end

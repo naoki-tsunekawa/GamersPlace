@@ -15,7 +15,6 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
-    get :favoritegames, on: :collection
   end
   # game
   resources :games do
