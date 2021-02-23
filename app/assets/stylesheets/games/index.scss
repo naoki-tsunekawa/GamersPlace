@@ -1,16 +1,14 @@
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
 .games_index_title {
 	text-align:center;
 }
 .games_container {
 	width: 80%;
 	margin: 0 auto;
-}
-
-.game_card{
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-	gap: 15px;
-	margin: 20px 0;
 }
 
 .game_content	{
@@ -22,14 +20,47 @@
 }
 
 .item_wrapper {
-	width: 90%;
-	margin: 0 auto;
+	margin: 3rem auto;
+  width: 320px;
 }
 
-.game_titletext {
-	font-size: 20px;
-  font-weight: bold;
-	line-height: 125%;
-	margin-bottom: 10px;
-	color: black;
+.card {
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .16);
+  color: #212121;
+}
+
+.card_header {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card__title {
+  padding: 1rem 1rem 0;
+  font-size: 1.25rem;
+  order: 1;
+}
+
+.card__thumbnail {
+  margin: 0;
+  order: 0;
+}
+
+.card__image {
+  width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card__body {
+  padding: 1rem;
+}
+
+.card__text {
+  font-size: .75rem;
+}
+
+.card__footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
 }

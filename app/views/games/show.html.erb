@@ -5,8 +5,6 @@
 <% provide(:title, 'Game Show') %>
 <h1 class="game_title">Game Show</h1>
 
-<%= render 'favoritegames/favoritegame' %>
-
 <div class="game_show_container">
 	<div class="game_show_content_wrapper">
 		<div class="game_show_text">
@@ -16,6 +14,16 @@
 			<img class="game_show_img" src="<%= "#{@game.game_image}" %>">
 		</div>
 		<div class="game_edit_container">
+			<% if current_user.already_favorited?(@game)%>
+				<%= link_to game_favoritegames_path(@game), method: :delete do %>
+					<i class= "fas fa-heart"></i>
+				<% end %>
+			<% else %>
+				<%= link_to game_favoritegames_path(@game), method: :post do %>
+					<i class="far fa-heart"></i>
+				<% end %>
+			<% end %>
+			<%= @game.favoritegames.count %>
 			<% if current_user.admin? %>
 				<%= link_to "edit", edit_game_path(@game)%> |
 				<%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>

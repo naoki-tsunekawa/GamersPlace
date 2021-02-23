@@ -12,18 +12,37 @@
 <% end %>
 
 <div class="games_container">
-	<div class="game_card">
-		<% @games.each do |game| %>
-			<%= link_to(game_path(game.id), class: 'game_content') do %>
-				<div class="item_wrapper">
-					<img class="game_img" src="<%= "#{game.game_image}" %>">
-					<div class="game_textbox">
-							<div class="game_titletext">
-								<%= game.title %>
-							</div>
+	<% @games.each do |game| %>
+		<%= link_to(game_path(game.id), class: 'game_content') do %>
+			<div class="item_wrapper">
+				<div class="card">
+					<div class="card__header">
+						<h3 class="card__title">
+							<%= game.title %>
+						</h3>
+						<div class="card__thumbnail">
+							<img class="card__img" src="<%= "#{game.game_image}" %>">
 						</div>
+					</div>
+					<div class="card__body">
+						<p class="card__text">
+							<%= game.description %>
+						</p>
+					</div>
+					<div class="card__footer">
+						<% if current_user.already_favorited?(game)%>
+							<%= link_to game_favoritegames_path(game), method: :delete do %>
+								<i class= "fas fa-heart"></i>
+							<% end %>
+						<% else %>
+							<%= link_to game_favoritegames_path(game), method: :post do %>
+								<i class="far fa-heart"></i>
+							<% end %>
+						<% end %>
+						<%= game.favoritegames.count %>
+					</div>
 				</div>
-			<% end %>
+			</div>
 		<% end %>
-	</div>
+	<% end %>
 </div>
