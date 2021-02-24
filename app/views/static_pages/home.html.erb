@@ -5,6 +5,42 @@
 <% provide(:title) %>
 <% if logged_in? %>
   <%= render 'users/user_details' %>
+	<div class="games_container">
+	<% @favorite_list.each do |game| %>
+		<%= link_to(game_path(game.id), class: 'game_content') do %>
+			<div class="item_wrapper">
+				<div class="card">
+					<div class="card__header">
+						<h3 class="card__title">
+							<%= game.title %>
+						</h3>
+						<div class="card__thumbnail">
+							<img class="card__img" src="<%= "#{game.game_image}" %>">
+						</div>
+					</div>
+					<div class="card__body">
+						<p class="card__text">
+							<%= game.description %>
+						</p>
+					</div>
+					<div class="card__footer">
+						<% if current_user.already_favorited?(game)%>
+							<%= link_to game_favoritegames_path(game), method: :delete do %>
+								<i class= "fas fa-heart"></i>
+							<% end %>
+						<% else %>
+							<%= link_to game_favoritegames_path(game), method: :post do %>
+								<i class="far fa-heart"></i>
+							<% end %>
+						<% end %>
+						<%= game.favoritegames.count %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
 <% else %>
 	<div class="home-container">
 		<div class="home-text-container">
@@ -14,9 +50,3 @@
 	</div>
 <% end %>
 
-<% if @favorite_list.present? %>
-  <% @favorite_list.each do |game| %>
-    <%= game.title %>
-    <%= game.content %>
-  <% end %>
-<% end %>
