@@ -1,0 +1,43 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_USER: user
+      MYSQL_PASSWORD: 1234
+      MYSQL_DATABASE: GamersPlace_db
+    volumes:
+      - db-volume:/var/lib/mysql
+    ports:
+      - "4306:3306"
+
+  app:
+    build: .
+    command: bundle exec puma -C config/puma.rb
+    volumes:
+      - .:/GamersPlace
+      - public-data:/GamersPlace/public
+      - tmp-data:/GamersPlace/tmp
+      - log-data:/GamersPlace/log
+
+  web:
+    build:
+      context: containers/nginx
+    volumes:
+      - public-data:/GamersPlace/public
+      - tmp-data:/GamersPlace/tmp
+    ports:
+      - 80:80
+
+  ## テスト環境
+  # chrome:
+  #   image: selenium/standalone-chrome:latest
+  #   ports:
+  #     - 4444:4444
+
+volumes:
+  db-volume:
+  public-data:
+  tmp-data:
+  log-data:

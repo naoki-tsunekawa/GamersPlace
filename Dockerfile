@@ -10,3 +10,5 @@ ENV LANG C.UTF-8
 WORKDIR /GamersPlace
 COPY Gemfile Gemfile.lock /GamersPlace/
 RUN bundle install
+RUN mkdir -p tmp/sockets
+RUN mkdir -p tmp/pids
