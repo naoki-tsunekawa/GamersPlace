@@ -16,13 +16,16 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
+
   # game
   resources :games do
-    resource :favoritegames, only: [:create, :destroy]
+    resources :favoritegames, only: [:create, :destroy]
+    resources :reviews, only: [:index, :create]
   end
 
   # post
   resources :posts, only: [:create, :destroy]
+
   # relationship
   resources :relationships, only: [:create, :destroy]
 
