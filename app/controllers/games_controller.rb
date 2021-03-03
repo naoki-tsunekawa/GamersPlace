@@ -26,6 +26,9 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @posts = @game.posts.all
     @post = @game.posts.build if logged_in?
+
+    # reveiw
+    @reveiw = Review.new
   end
 
   def destroy

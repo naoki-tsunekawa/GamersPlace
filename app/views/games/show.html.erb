@@ -24,6 +24,7 @@
 				<% end %>
 			<% end %>
 			<%= @game.favoritegames.count %>
+			<%= render 'reviews/form', review: @review, game: @game %>
 			<% if current_user.admin? %>
 				<%= link_to "edit", edit_game_path(@game)%> |
 				<%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>
