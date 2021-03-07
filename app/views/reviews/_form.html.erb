@@ -1,21 +1,27 @@
-<p class="is-size-4 mb-3">レビューを書く</p>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'reviews/form' %>
+<% end %>
 
-<div class="reveiw_container">
-	<%= form_with model: review, url: game_reviews_path(game), local:true do |f| %>
-		<div class="main-rating">
-			<div class="ratings">
-				<span class="fa fa-star-o" id="star"></span>
-				<span class="fa fa-star-o" id="star"></span>
-				<span class="fa fa-star-o" id="star"></span>
-				<span class="fa fa-star-o" id="star"></span>
-				<span class="fa fa-star-o" id="star"></span>
+<div class="review_container">
+	<p class="reveiw_title">レビューを書く</p>
+
+	<div class="reveiw_container">
+		<%= form_with model: review, url: game_reviews_path(game), local:true do |f| %>
+			<div class="main-rating">
+				<div class="ratings">
+					<span class="fa fa-star-o" id="star"></span>
+					<span class="fa fa-star-o" id="star"></span>
+					<span class="fa fa-star-o" id="star"></span>
+					<span class="fa fa-star-o" id="star"></span>
+					<span class="fa fa-star-o" id="star"></span>
+				</div>
+				<div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
 			</div>
-			<div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
-		</div>
-		<%= f.hidden_field :game_id, value: game.id %>
-		<%= f.hidden_field :score, id: "rating-value" %>
-		<%= f.text_field :content, class: "textarea" %>
-		<%= f.submit "保存", class: "button" %>
-		<%= link_to "他のレビューを見る", game_reviews_path(game), class: "button" %>
-	<% end %>
+			<%= f.hidden_field :game_id, value: game.id %>
+			<%= f.hidden_field :score, id: "rating-value" %>
+			<%= f.text_field :content, class: "textarea" %>
+			<%= f.submit "保存", class: "review_button" %>
+			<%= link_to "他のレビューを見る", game_reviews_path(game), class: "other_review_link" %>
+		<% end %>
+	</div>
 </div>
