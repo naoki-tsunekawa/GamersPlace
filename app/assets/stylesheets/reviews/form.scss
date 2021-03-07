@@ -1,0 +1,42 @@
+
+.review_container {
+	width: 50%;
+	margin: 40px auto;
+	text-align: left;
+}
+
+.reveiw_title {
+	font-size: 25px;
+}
+
+.main-rating {
+	display: flex;
+	margin-top: 10px;
+	font-size: 20px;
+
+	.ratings {
+		color: #ffcc00;
+	}
+
+	.rating-value-display {
+		margin-left: 10px;
+	}
+}
+
+.textarea {
+	border: 1px solid black;
+	resize: none;
+  width: 100%;
+  height: 100px;
+}
+
+.review_button {
+	margin-top: 10px;
+	padding: 5px 60px;
+	border: 1px solid black;
+}
+
+.other_review_link {
+	text-decoration: none;
+	text-align: right;
+}

@@ -3,8 +3,8 @@
 		<div class="text-title">
 			<%= link_to "Gamers Place", root_path, id: "logo" %>
 		</div>
-		<nav>
-			<ul class="navbar-right parent-nav">
+		<nav class="header_nav">
+			<ul class="navbar parent-nav">
 				<li class="nav-text"><%= link_to "Home", root_path %></li>
 				<li class="nav-text"><%= link_to "Help", help_path %></li>
 				<% if logged_in? %>

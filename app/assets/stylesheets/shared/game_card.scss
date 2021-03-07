@@ -1,3 +1,5 @@
+$cBlack:#485460;
+
 img {
   max-width: 100%;
   vertical-align: bottom;
@@ -8,6 +10,8 @@ img {
 	margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
+  color: $cBlack;
 }
 
 .game_content	{
@@ -19,14 +23,19 @@ img {
 }
 
 .item_wrapper {
-	margin: 3rem auto;
-  width: 320px;
+  width: 30%;
+  margin-top: 50px;
+  margin-right: 5%;
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
 }
 
 .card {
   background-color: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, .16);
-  color: #212121;
+  color: $cBlack;
 }
 
 .card_header {
@@ -38,17 +47,19 @@ img {
   padding: 1rem 1rem 0;
   font-size: 1.25rem;
   order: 1;
+  color: $cBlack;
+  margin: 10px;
 }
 
 .card__thumbnail {
-  margin: 0;
-  order: 0;
-}
-
-.card__image {
   width: 100%;
-	height: 100%;
-	object-fit: cover;
+  margin: 0 auto;
+  border: 1px solid #dcdde1;
+
+  .card__img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
 
 .card__body {
@@ -56,7 +67,8 @@ img {
 }
 
 .card__text {
-  font-size: .75rem;
+  font-size: 18px;
+  color: $cBlack;
 }
 
 .card__footer {
