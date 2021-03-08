@@ -1,10 +1,12 @@
 @import "shared/game_card.scss";
+$cBlack:#485460;
 
 .home-container {
 	width: auto;
 	height: 400px;
 	margin: 20px 100px;
 	text-align: center;
+	color: $cBlack;
 	background-color: #dcdcdc;
 	border-radius: 10px;
 	display: -webkit-flex;

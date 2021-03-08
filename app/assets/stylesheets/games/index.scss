@@ -1,7 +1,9 @@
 @import "shared/game_card.scss";
+$cBlack:#485460;
 
 .games_index_title {
 	text-align:center;
+	margin-top: 60px;
 	letter-spacing: 10px;
-	color: #485460;
+	color: $cBlack;
 }

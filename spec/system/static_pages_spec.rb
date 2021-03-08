@@ -6,22 +6,22 @@ RSpec.describe "StaticPages", type: :system do
   describe "check title tags" do
     it "the title contains home" do
       visit root_path
-      expect(page).to have_title 'GamersPlace'
+      expect(page).to have_title 'GamersPlays'
     end
 
     it "the title contains help" do
       visit help_path
-      expect(page).to have_title 'Help | GamersPlace'
+      expect(page).to have_title 'Help | GamersPlays'
     end
 
     it "the title contains about" do
       visit about_path
-      expect(page).to have_title 'About | GamersPlace'
+      expect(page).to have_title 'About | GamersPlays'
     end
 
     it "the title contains contact" do
       visit contact_path
-      expect(page).to have_title 'Contact | GamersPlace'
+      expect(page).to have_title 'Contact | GamersPlays'
     end
   end
 
@@ -29,7 +29,7 @@ RSpec.describe "StaticPages", type: :system do
   scenario "testing for layout links" do
     visit root_path
     aggregate_failures do
-      expect(page).to have_link 'Gamers Place', href: root_path
+      expect(page).to have_link 'Gamers Plays', href: root_path
       expect(page).to have_link 'Home', href: root_path
       expect(page).to have_link 'Help', href: help_path
       expect(page).to have_link 'About', href: about_path
