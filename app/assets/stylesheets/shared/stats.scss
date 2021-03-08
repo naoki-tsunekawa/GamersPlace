@@ -1,6 +1,12 @@
+$cBlack:#485460;
+
+.stats_container {
+	margin-top: 20px;
+}
+
 .ststs_link_btn {
 	text-decoration: none;
-	color: black;
+	color: $cBlack;
 
 	&:hover {
 		opacity: 0.6;

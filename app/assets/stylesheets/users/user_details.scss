@@ -1,16 +1,26 @@
-@import "users/stats.scss";
+$cBlack:#485460;
 
 .user__container {
-	margin: 50px 20px;
+	margin: 50px 60px;
 }
 
-.user__name-text {
+.user_name_wrapper {
 	display: inline-block;
-	vertical-align:	top;
+	position: relative;
+	width: 150px;
+	height: 80px;
+	color: $cBlack;
+
+	.user_name_contents {
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		transform: translate(0, -50%)
+	}
 }
 
 .btn {
 	margin-top: 20px;
 	padding: 5px 100px;
-	border: 1px solid black;
+	border: 1px solid $cBlack;
 }

@@ -1,3 +1,7 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'shared/stats' %>
+<% end %>
+
 <% @user ||= current_user %> <%# 現在のユーザを取得 %>
 <div class="stats_container">
   <a href="<%= following_user_path(@user) %>" class="ststs_link_btn">
