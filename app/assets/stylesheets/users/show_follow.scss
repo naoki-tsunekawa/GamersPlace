@@ -1,13 +1,21 @@
 @import "users/user_details.scss";
 @import "users/user.scss";
 
+$cBlack:#485460;
+
 .show_follow_container {
 	display: flex;
 	align-items:stretch;
 }
 
 .user_detail_wrapper {
+	width: 380px;
 	padding-left: 20px;
+}
+
+.user_avatars {
+	margin-left: 60px;
+
 }
 
 .users_container {
@@ -16,18 +24,22 @@
 
 	a {
 		text-decoration: none;
-		color: black;
+		color: $cBlack;
 	}
 }
-
 
 .user_follow_title {
 	font-size: 30px;
 	margin-bottom: 20px;
 	text-align: left;
+	color: $cBlack;
 }
 
 .users_list {
 	list-style: none;
 	margin-bottom: 20px;
+}
+
+.pagenate_wrapper {
+	display: inline-block;
 }

@@ -4,7 +4,8 @@
 
 <% provide(:title) %>
 <% if logged_in? %>
-  <%= render 'users/user_details' %>
+	<%# ログイン時 %>
+	<div class="home_user_details_wrapper"><%= render 'users/user_details' %></div>
 	<div class="games_container">
 	<% @favorite_list.each do |game| %>
 		<%= link_to(game_path(game.id), class: 'game_content') do %>
@@ -42,8 +43,9 @@
 </div>
 
 <% else %>
+	<%# 未ログイン時 %>
 	<div class="home-container">
-		<div class="home-text-container">
+		<div class="home_text_container">
 			<h1>Welcome to the Gamers Place App</h1>
 			<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 		</div>
