@@ -21,7 +21,9 @@
 			<ul class="users_list">
 				<%= render @users %>
 			</ul>
-			<%= paginate @users %>
+			<div class="pagenate_wrapper">
+				<%= paginate @users %>
+			</div>
 		<% end %>
 	</div>
 </div>
