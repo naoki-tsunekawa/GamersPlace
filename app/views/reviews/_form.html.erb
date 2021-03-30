@@ -6,7 +6,8 @@
 	<p class="reveiw_title">レビューを書く</p>
 
 	<div class="reveiw_container">
-		<%= form_with model: review, url: game_reviews_path(game), local:true do |f| %>
+		<%= form_with model: review, url: game_reviews_path(game), local: true do |f| %>
+			<%= render 'shared/error_messages', object: f.object %>
 			<div class="main-rating">
 				<div class="ratings">
 					<span class="fa fa-star-o" id="star"></span>
