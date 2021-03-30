@@ -27,8 +27,9 @@ class GamesController < ApplicationController
     @posts = @game.posts.all
     @post = @game.posts.build if logged_in?
 
-    # reveiw
-    @reveiw = Review.new
+    # review
+    # 新規レビュー作成のためのインスタンス作成
+    @review = Review.new
   end
 
   def destroy
