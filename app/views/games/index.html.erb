@@ -40,6 +40,12 @@
 							<% end %>
 						<% end %>
 						<%= game.favoritegames.count %>
+						<%= link_to game_reviews_path(game), class: "button btn-review" do %>
+							レビューを見る
+						<% end %>
+						<%= link_to game_path(game), class: "button btn-review" do %>
+							レビューを書く
+						<% end %>
 					</div>
 				</div>
 			</div>
