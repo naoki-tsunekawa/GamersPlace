@@ -1,4 +1,7 @@
 class ReviewsController < ApplicationController
+  # レビュー機能をログインしているユーザのみ使用可能
+  before_action :logged_in_user, only: [:create, :index]
+
   def index
     @game = Game.find(params[:game_id])
     @reviews = @game.reviews
