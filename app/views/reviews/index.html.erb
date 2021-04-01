@@ -1,42 +1,51 @@
-<section class="section mt-6">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-5">
-        <div class="card mb-6">
-          <header class="card-header">
-            <p class="card-header-title">
-              <%= @game.title %>
-            </p>
-          </header>
-          <div class="card-content">
-            <div class="content average-score">
-              <div class="star-rating mb-2">
-                <div class="star-rating-front" style="width: %">★★★★★</div>
-                <div class="star-rating-back">★★★★★</div>
-              </div>
-              <div class="average-score-display ml-3 pt-2">
-                点（<%= @game.reviews.count %>件のレビュー）
-              </div>
-            </div>
-          </div>
-        </div>
-        <table class="table is-fullwidth has-text-centered">
-          <thead>
-            <tr>
-              <th>ユーザー</th><th>点数</th><th>内容</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% @reviews.each do |review| %>
-              <tr>
-                <td><%= review.user.name %></td>
-                <td><%= review.score %></td>
-                <td><%= review.content %></td>
-              </tr>
-            <% end %>
-          </tbody>
-        </table>
-      </div>
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'reviews/index' %>
+<% end %>
+
+<section class="section">
+  <div class="reviews_container">
+    <div class="columns">
+			<div class="reviews_card">
+				<header class="reviews_card_header">
+					<p class="card_header_title">
+						<%= @game.title %>
+					</p>
+				</header>
+				<div class="reviews_card_content">
+					<div class="content average-score">
+						<div class="star-rating">
+							<div class="star-rating-front" style="width: <%= @game.review_score_percentage %>%">★★★★★</div>
+							<div class="star-rating-back">★★★★★</div>
+						</div>
+						<div class="average-score-display">
+							<%= @game.avg_score %>点（<%= @game.reviews.count %>件のレビュー）
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card-footer">
+				<%= link_to game_path(@game), class: "button btn-review" do %>
+					レビューを書く
+				<% end %>
+			</div>
+			<table class="reviews_table">
+				<thead>
+					<tr class="reviews_contents_title">
+						<th class="reviews_user_text">ユーザー</th>
+						<th class="reviews_score_text">点数</th>
+						<th class="reviews_content_text">内容</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @reviews.each do |review| %>
+						<tr>
+							<td><%= review.user.name %></td>
+							<td><%= review.score %></td>
+							<td><%= review.content %></td>
+						</tr>
+					<% end %>
+				</tbody>
+			</table>
     </div>
   </div>
 </section>
