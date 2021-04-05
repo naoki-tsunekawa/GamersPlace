@@ -2,7 +2,8 @@
 version: '3'
 services:
   app:
-    build: .
+    build:
+      context: .
     # =========ローカルと本番切り替え===========
     # command: bundle exec puma -C config/puma.rb
     command: bundle exec puma -C config/puma.rb -e production
@@ -12,6 +13,8 @@ services:
       - public-data:/GamersPlace/public
       - tmp-data:/GamersPlace/tmp
       - log-data:/GamersPlace/log
+    networks:
+      - GamersPlace-network
   web:
     build:
       context: containers/nginx
@@ -20,11 +23,19 @@ services:
       - tmp-data:/GamersPlace/tmp
     ports:
       - 80:80
+    depends_on:
+      - app
+    networks:
+      - GamersPlace-network
 volumes:
   mysql-data:
   public-data:
   tmp-data:
   log-data:
+
+networks:
+  GamersPlace-network:
+    external: true
 # ======================================
 
 
