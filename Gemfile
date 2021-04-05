@@ -72,4 +72,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'carrierwave'
 gem 'mini_magick'
 
+# for jquery-rais
 gem "jquery-rails"
+
+# for dotenv-rails
+gem 'dotenv-rails'
