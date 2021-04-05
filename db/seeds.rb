@@ -24,18 +24,18 @@ User.create!(name:  name,
 		password_confirmation: password)
 end
 
-# サンプルゲーム掲示板の作成
-Game.create!(title: "Sample Game Board",
-	description: "Sample description",
-	game_image: File.open("./public/images/600×400.png"))
+# # サンプルゲーム掲示板の作成
+# Game.create!(title: "Sample Game Board",
+# 	description: "Sample description",
+# 	game_image: File.open("./public/images/600×400.png"))
 
-# サンプル投稿の作成
-user = User.first
-game = Game.first
-5.times do |i|
-	content = "sample content"
-	Post.create!(content: "sample content", user_id: user.id, game_id: game.id)
-end
+# # サンプル投稿の作成
+# user = User.first
+# game = Game.first
+# 5.times do |i|
+# 	content = "sample content"
+# 	Post.create!(content: "sample content", user_id: user.id, game_id: game.id)
+# end
 
 # フォロー、フォロワーのサンプルデータ作成
 users = User.all
