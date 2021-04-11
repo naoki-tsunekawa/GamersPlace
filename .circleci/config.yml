@@ -12,7 +12,7 @@ jobs:
           MYSQL_ROOT_PASSWORD: 'password'
           MYSQL_PASSWORD: 'password'
           MYSQL_DATABASE: 'GamersPlace_test'
-          MYSQL_HOST: 'db'
+          MYSQL_HOST: 'test'
         name: db
     working_directory: ~/GamersPlace
     steps:
@@ -49,4 +49,3 @@ jobs:
       - store_artifacts:
           path: /tmp/test-results
           destination: test-results
-
