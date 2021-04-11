@@ -13,8 +13,6 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  # username: <%= Rails.application.credentials.db[:username] %>
-  # password: <%= Rails.application.credentials.db[:password] %>
   username: <%= ENV.fetch('MYSQL_USER') { 'root' } %>
   password: <%= ENV.fetch('MYSQL_PASSWORD') { 'password' } %>
   host: db
@@ -54,16 +52,4 @@ production:
   database: GamersPlace_production
   username: GamersPlace
   password: <%= ENV['GAMERSPLACE_DATABASE_PASSWORD'] %>
-
-# production
-# production:
-#   <<: *default
-#   database: <%= Rails.application.credentials.production[:database] %>
-#   adapter: mysql2
-#   encoding: utf8mb4
-#   charset: utf8mb4
-#   collation: utf8mb4_general_ci
-#   host: <%= Rails.application.credentials.production[:host] %>
-#   username: <%= Rails.application.credentials.production[:username] %>
-#   password: <%= Rails.application.credentials.production[:password] %>
 
