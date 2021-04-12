@@ -14,6 +14,8 @@ jobs:
           MYSQL_DATABASE: 'GamersPlace_test'
           MYSQL_HOST: 'db'
         name: db
+      - image: selenium/standalone-chrome-debug:latest
+        name: chrome
     working_directory: ~/GamersPlace
     steps:
       - checkout
@@ -30,8 +32,8 @@ jobs:
           paths:
             - ./vendor/bundle
           key: v1-dependencies-{{ checksum "Gemfile.lock" }}
-      - run: bundle exec rake db:create
-      - run: bundle exec rake db:schema:load
+      - run: bundle exec rails db:create
+      - run: bundle exec rails db:schema:load
       - run:
           name: run tests
           command: |
