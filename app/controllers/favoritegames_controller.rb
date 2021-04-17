@@ -10,8 +10,6 @@ class FavoritegamesController < ApplicationController
 
   # お気に入り削除
   def destroy
-    # @favoritegame = Favoritegame.find(user_id: current_user.id, game_id: @game.id)
-    # @favoritegame.destroy
     @game = Game.find(params[:game_id])
     @favoritegame = current_user.favoritegames.find_by(game_id: @game.id)
     @favoritegame.destroy

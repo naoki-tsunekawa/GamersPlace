@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
   # game
   resources :games do
-    resources :favoritegames, only: [:create, :destroy]
+    # ※resourceとresourcesでroutingのpathが異なるので注意
+    resource :favoritegames, only: [:create, :destroy]
+    # post 'favoritegames' => 'favoritegames#create'
+    # delete '/favoritegames' => 'favoritegames#destroy'
+
     resources :reviews, only: [:index, :create]
   end
 

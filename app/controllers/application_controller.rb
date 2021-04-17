@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+	# Helper読み込み
 	include SessionsHelper
 
 	private
