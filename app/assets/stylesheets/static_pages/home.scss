@@ -12,20 +12,27 @@ $cBlack:#485460;
 	margin-top: 20px;
 	text-align: center;
 	color: white;
-	// background-color: #dcdcdc;
-	// border-radius: 10px;
-	// display: -webkit-flex;
-	// display: flex;
-	// -webkit-align-items: center;
-	// align-items: center;
-	// -webkit-justify-content: center;
-	// justify-content: center;
 }
 .bg-container {
 	width: auto;
 	height: 750px;
 	background-image: image-url('Gamersplace_home_img.jpg');
 	background-size:  cover;
+}
+
+.home_text_container {
+	position: absolute;
+	top: 300px;
+	left: 60%;
+}
+
+.home_text {
+	font-size: 50px;
+}
+
+.btn-signup {
+	color: white;
+	text-decoration: none;
 }
 
 .home-container h1 {
