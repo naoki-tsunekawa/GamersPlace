@@ -8,6 +8,26 @@ $cBlack:#485460;
 	color: $cBlack;
 }
 
+.search_field {
+	display: flex;
+	justify-content: center;
+}
+
+.search_title {
+	font-size: 18px;
+	padding: 4px 0;
+}
+
+.search_field_type {
+	border: solid 1px $cBlack;
+	padding: 4px 10px;
+}
+
+.search_field_btn {
+	border: solid 1px $cBlack;
+	padding: 4px 10px;
+}
+
 .games_container {
 	margin-bottom: 100px;
 }

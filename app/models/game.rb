@@ -25,4 +25,14 @@ class Game < ApplicationRecord
 			0.0
 		end
 	end
+
+	# 検索メソッド
+	def self.search(search)
+		if search
+			Game.where(["title LIKE ?", "%#{search}%"])
+		else
+			Game.all
+		end
+	end
+
 end
