@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     # delete '/favoritegames' => 'favoritegames#destroy'
 
     resources :reviews, only: [:index, :create]
+    collection do
+      get 'search'
+    end
   end
 
   # post

@@ -11,6 +11,14 @@
 	</div>
 <% end %>
 
+<div class="search_field">
+	<p class="search_title">検索：</p>
+	<%= form_tag(games_path, :method => 'get') do %>
+		<%= text_field_tag :search, "",  {class: "search_field_type"}%>
+		<%= submit_tag 'Search', :name => nil, class: "search_field_btn" %>
+	<% end %>
+</div>
+
 <div class="games_container">
 	<% @games.each do |game| %>
 		<%= link_to(game_path(game.id),data: {"turbolinks" => false} , class: 'game_content') do %>
