@@ -1,6 +1,11 @@
 @import "shared/game_card.scss";
 $cBlack:#485460;
 
+.button {
+	border: solid 1px $cBlack;
+	padding: 4px 10px;
+}
+
 .games_index_title {
 	text-align:center;
 	margin-top: 60px;
@@ -8,9 +13,20 @@ $cBlack:#485460;
 	color: $cBlack;
 }
 
+.new_game_wrapper {
+	margin-left: 100px;
+	padding: 10px;
+}
+
+.btn-new-game {
+	text-decoration: none;
+	color: $cBlack;
+}
+
 .search_field {
 	display: flex;
 	justify-content: center;
+	color: $cBlack;
 }
 
 .search_title {
