@@ -7,7 +7,7 @@ RSpec.describe "GamesNews", type: :system do
     # ログイン処理
     login_as(admin_user)
     visit games_path
-    click_on 'New Game Board!'
+    click_on 'New Game Board'
   end
 
   scenario 'it fails new with wrong infomation' do
