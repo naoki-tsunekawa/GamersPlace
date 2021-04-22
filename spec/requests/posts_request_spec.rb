@@ -5,17 +5,16 @@ RSpec.describe "Posts", type: :request do
 		let(:post_data) { FactoryBot.attributes_for(:post) }
 		let(:post_request) { post posts_path, params: { post: post_data } }
 
-
     context "when not logged in" do
-			it "doesn't change post's count" do
-				expect { post_request }.to change(Post, :count).by(0)
-				end
+      it "doesn't change post's count" do
+        expect { post_request }.to change(Post, :count).by(0)
       end
+    end
 
       it "redirects to login_url" do
         expect(post_request).to redirect_to login_url
       end
-    end
+  end
 
 	describe "posts#destroy" do
     let!(:post_data) { FactoryBot.create(:post) }
