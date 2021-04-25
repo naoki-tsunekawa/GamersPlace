@@ -23,6 +23,27 @@ RSpec.describe Favoritegame, type: :model do
   end
 
   # 関連づけ削除テスト
+  describe "dependent: :destroy" do
+    # ゲームもしくはユーザが消された場合お気に入りデータも削除
+    let(:delete_favoritegame) { FactoryBot.create(:favoritegame, user_id: user.id, game_id: game.id) }
 
+    before do
+      user.save
+      game.save
+      delete_favoritegame
+    end
+
+    it "game delete succeeds" do
+      expect do
+        game.destroy
+      end.to change(Favoritegame, :count).by(-1)
+    end
+
+    it "user delete succeeds" do
+      expect do
+        user.destroy
+      end.to change(Favoritegame, :count).by(-1)
+    end
+  end
 
 end
