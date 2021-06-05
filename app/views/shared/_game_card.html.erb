@@ -1,0 +1,39 @@
+<%= link_to(game_path(game.id),data: {"turbolinks" => false} , class: 'game_content') do %>
+	<div class="item_wrapper">
+		<div class="card">
+			<div class="card__header">
+				<div class="card__thumbnail">
+					<img class="card__img" src="<%= "#{game.game_image}" %>">
+				</div>
+			</div>
+			<div class="card__body">
+				<h3 class="card__title">
+					<%= game.title %>
+				</h3>
+				<div class="card__discription_wrapper">
+					<p class="card__text">
+						<%= game.description %>
+					</p>
+				</div>
+			</div>
+			<div class="card__footer">
+				<div class="favorite_wrapper">
+					<% if current_user.already_favorited?(game)%>
+						<%= link_to game_favoritegames_path(game), method: :delete do %>
+							<i class= "fas fa-heart btn-fav">お気に入り解除</i>
+						<% end %>
+					<% else %>
+						<%= link_to game_favoritegames_path(game), method: :post do %>
+							<i class="far fa-heart btn-fav">お気に入り登録</i>
+						<% end %>
+					<% end %>
+				</div>
+				<div class="review_wrapper">
+					<%= link_to game_reviews_path(game), class: "button btn-review" do %>
+						レビュー
+					<% end %>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>
