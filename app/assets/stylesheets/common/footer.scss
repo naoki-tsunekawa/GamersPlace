@@ -1,4 +1,6 @@
 /* footer */
+$cWhite: #ecf0f1;
+$cBlack:#3e3e3e;
 
 .footer-nav {
 	width: auto;
@@ -12,7 +14,7 @@
 }
 
 .footer-list a:hover {
-	color: #fff;
+	color: $cWhite;
 }
 
 .footer-list {
