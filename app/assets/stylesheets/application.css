@@ -13,6 +13,7 @@
  * require_tree .
  *= require_self
  *= require common/reset
+ *= require common/common
  *= require common/header
  *= require common/messages
  *= require common/error_messages
