@@ -10,10 +10,10 @@ RSpec.describe "UsersEdits", type: :system do
   end
 
   scenario 'it fails edit with wrong information' do
-    fill_in 'Name', with: ' '
-    fill_in 'Email', with: 'user@invalid'
-    fill_in 'Password', with: 'foo'
-    fill_in 'Confirmation', with: 'bar'
+    fill_in '名前', with: ' '
+    fill_in 'メールアドレス', with: 'user@invalid'
+    fill_in 'パスワード', with: 'foo'
+    fill_in 'パスワード(確認)', with: 'bar'
     click_on 'Save changes'
     aggregate_failures do
       expect(current_path).to eq user_path(user)
@@ -22,10 +22,10 @@ RSpec.describe "UsersEdits", type: :system do
   end
 
   scenario 'it succeeds edit with correct information' do
-    fill_in 'Name', with: 'Foo Bar'
-    fill_in 'Email', with: 'foo@bar.com'
-    fill_in 'Password', with: ''
-    fill_in 'Confirmation', with: ''
+    fill_in '名前', with: 'Foo Bar'
+    fill_in 'メールアドレス', with: 'foo@bar.com'
+    fill_in 'パスワード', with: ''
+    fill_in 'パスワード(確認)', with: ''
     click_on 'Save changes'
     aggregate_failures do
       expect(current_path).to eq user_path(user)
