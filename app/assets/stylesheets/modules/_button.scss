@@ -1,0 +1,30 @@
+.btn {
+  position: relative;
+  display: inline-block;
+  background-color: $cWhite;
+  border: 1px solid $cBlack;
+  padding: 10px 40px;
+  margin: 50px auto 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: $cBlack;
+  text-decoration: none !important;
+
+  &.float:hover {
+    background-color: $cBlack;
+    color: $cWhite;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+  }
+
+  &.filled {
+    background-color: $cWhite;
+    color: $cBlack;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+
+    &:hover {
+      background-color: $cBlack;
+      color: $cWhite;
+      box-shadow: none;
+    }
+  }
+}
