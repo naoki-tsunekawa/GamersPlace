@@ -4,6 +4,7 @@
 .signup_title {
 	text-align:center;
 	margin-top: 30px;
+	color: $cBlack;
 }
 
 .signup_container {
@@ -16,8 +17,8 @@
 	text-align:center;
 }
 
-.form_common_wrapper {
-	margin: 10px auto;
+.signup_form_common_wrapper {
+	margin: 30px auto;
 }
 
 .label_common {
@@ -29,5 +30,6 @@
 .input_common {
 	border: 1px solid black;
 	width: 100%;
+	padding: 5px;
 }
 

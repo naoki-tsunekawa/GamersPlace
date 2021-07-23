@@ -10,24 +10,24 @@
     <%= form_for(@user) do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 
-			<div class="form_common_wrapper">
+			<div class="signup_form_common_wrapper">
 				<%= f.label :name, class: "label_common" %>
-				<%= f.text_field :name, class: "input_common" %>
+				<%= f.text_field :name, class: "input_common", placeholder: "ユーザー名"  %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="signup_form_common_wrapper">
 				<%= f.label :email, class: "label_common" %>
-				<%= f.email_field :email, class: "input_common" %>
+				<%= f.email_field :email, class: "input_common", placeholder: "XXXX@exmaple.com" %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="signup_form_common_wrapper">
 				<%= f.label :password, class: "label_common" %>
-				<%= f.password_field :password, class: "input_common" %>
+				<%= f.password_field :password, class: "input_common", placeholder: "パスワード"  %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="signup_form_common_wrapper">
 				<%= f.label :password_confirmation, class: "label_common" %>
-				<%= f.password_field :password_confirmation, class: "input_common" %>
+				<%= f.password_field :password_confirmation, class: "input_common", placeholder: "パスワード(確認)"  %>
 			</div>
 
       <%= f.submit "Create my account", class: "btn filled" %>

@@ -10,12 +10,12 @@
 		<div class="login_form_container">
 			<%= form_for(:session, url: login_path) do |f| %>
 
-				<div class="form_common_wrapper">
+				<div class="login_form_common_wrapper ">
 					<%= f.label :email, class: "label_common" %>
 					<%= f.email_field :email, class: "input_common", placeholder: "XXXX@exmaple.com" %>
 				</div>
 
-				<div class="form_common_wrapper">
+				<div class="login_form_common_wrapper ">
 					<%= f.label :password, class: "label_common" %>
 					<%= f.password_field :password, class: "input_common", placeholder: "password" %>
 				</div>
