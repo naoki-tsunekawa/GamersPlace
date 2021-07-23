@@ -1,5 +1,7 @@
 @import "shared/game_card.scss";
-$cBlack:#485460;
+@import "modules/variables";
+@import "modules/button";
+// $cBlack:#485460;
 
 .home_user_details_wrapper{
 	width: 380px;
@@ -9,10 +11,10 @@ $cBlack:#485460;
 .home-container {
 	width: auto;
 	height: 750px;
-	// margin-top: 20px;
 	text-align: center;
 	color: white;
 }
+
 .bg-container {
 	width: auto;
 	height: 750px;
@@ -28,6 +30,7 @@ $cBlack:#485460;
 
 .home_text {
 	font-size: 50px;
+	text-align: left;
 }
 
 .btn-signup {
@@ -42,6 +45,7 @@ $cBlack:#485460;
 .home_message_container {
 	margin-top: 50px;
 	font-size: 1.2rem;
+	text-align: left;
 }
 
 .user__container {
