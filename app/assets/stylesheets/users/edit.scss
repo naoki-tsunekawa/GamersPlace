@@ -1,7 +1,11 @@
+@import "modules/variables";
+@import "modules/button";
+
 .users_edit_title {
 	margin-top: 60px;
 	text-align:center;
-	letter-spacing: 5px;
+	letter-spacing: 2px;
+	color: $cBlack;
 }
 
 .users_edit_container {
@@ -13,8 +17,8 @@
 	text-align:center;
 }
 
-.form_common_wrapper {
-	margin: 10px auto;
+.edit_form_common_wrapper {
+	margin: 30px auto;
 }
 
 .label_common {
@@ -33,8 +37,17 @@
 	text-align: left;
 }
 
-.btn {
-	margin-top: 20px;
-	padding: 10px;
-	border: 1px solid black;
+.gear {
+	font-size: 1.5rem;
+	color: $cBlack;
+
+	&:hover {
+		opacity: 0.5;
+	}
 }
+
+// .btn {
+// 	margin-top: 20px;
+// 	padding: 10px;
+// 	border: 1px solid black;
+// }

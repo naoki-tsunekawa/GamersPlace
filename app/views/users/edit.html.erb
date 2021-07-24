@@ -3,7 +3,7 @@
 <% end %>
 
 <% provide(:title, "Edit user") %>
-<h1 class="users_edit_title">ユーザ情報編集</h1>
+<h1 class="users_edit_title">ユーザー編集</h1>
 
 <div class="users_edit_container">
   <div class="users_edit_form_container">
@@ -12,30 +12,32 @@
 
 			<div class="users_img">
 				<%= gravatar_for @user %>
-				<a href="http://gravatar.com/emails" target="_blank">change</a>
+				<a href="http://gravatar.com/emails" target="_blank">
+					<i class="fas fa-cog gear"></i>
+				</a>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="edit_form_common_wrapper">
 				<%= f.label :name, class: "label_common"  %>
 				<%= f.text_field :name, class: 'input_common' %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="edit_form_common_wrapper">
 				<%= f.label :email, class: "label_common"  %>
 				<%= f.email_field :email, class: 'input_common' %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="edit_form_common_wrapper">
 				<%= f.label :password, class: "label_common"  %>
 				<%= f.password_field :password, class: 'input_common' %>
 			</div>
 
-			<div class="form_common_wrapper">
+			<div class="edit_form_common_wrapper">
 				<%= f.label :password_confirmation, class: "label_common" %>
 				<%= f.password_field :password_confirmation, class: 'input_common' %>
 			</div>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn filled" %>
     <% end %>
   </div>
 </div>
