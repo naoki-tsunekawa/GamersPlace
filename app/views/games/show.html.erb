@@ -6,22 +6,22 @@
 
 <div class="game_show_container">
 	<div class="game_show_content_wrapper">
-		<div class="game_show_text">
-			<%= @game.title %>
-			<% if current_user.already_favorited?(@game)%>
-				<%= link_to game_favoritegames_path(@game), method: :delete do %>
-					<i class= "fas fa-heart"></i>
-				<% end %>
-			<% else %>
-				<%= link_to game_favoritegames_path(@game), method: :post do %>
-					<i class="far fa-heart"></i>
-				<% end %>
-			<% end %>
-			<%= @game.favoritegames.count %>
-		</div>
 		<div class="game_image_wrapper">
 			<img class="game_show_img" src="<%= "#{@game.game_image}" %>">
 		</div>
+		<div class="game_text_wrapper">
+			<%= @game.title %>
+			<% if current_user.already_favorited?(@game)%>
+				<%= link_to game_favoritegames_path(@game), method: :delete do %>
+					<i class= "fas fa-heart fav-icon"></i>
+				<% end %>
+			<% else %>
+				<%= link_to game_favoritegames_path(@game), method: :post do %>
+					<i class="fav far fa-heart fav-icon"></i>
+				<% end %>
+			<% end %>
+		</div>
+		<div>
 			<% if current_user.admin? %>
 				<%= link_to "edit", edit_game_path(@game)%> |
 				<%= link_to "delete", @game, method: :delete, data: { confirm: "You sure?" } %>
@@ -29,17 +29,18 @@
 			<%= render 'reviews/form', review: @review, game: @game %>
 		</div>
 	</div>
-	<%= render 'shared/post_form' %>
-	<div class="post_container">
-		<% if @game.posts.count == 0 %>
-			<h3>現在の投稿は0件です</h3>
-		<% else %>
-			<h3>Posts (<%= @game.posts.count %>)</h3>
-      <ol class="posts_list">
-        <%= render @posts %>
-      </ol>
-    <% end %>
-  </div>
+	<div class="game_post_global_container">
+		<%= render 'shared/post_form' %>
+		<div class="post_container">
+			<% if @game.posts.count == 0 %>
+				<h3>現在の投稿は0件です</h3>
+			<% else %>
+				<ol class="posts_list">
+					<%= render @posts %>
+				</ol>
+			<% end %>
+		</div>
+	</div>
 </div>
 
 

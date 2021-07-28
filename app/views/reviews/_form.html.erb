@@ -3,9 +3,8 @@
 <% end %>
 
 <div class="review_container">
-	<p class="reveiw_title">レビューを書く</p>
-
 	<div class="reveiw_container">
+		<%# <p class="reveiw_title">レビューを書く</p> %>
 		<%= form_with model: review, url: game_reviews_path(game), local: true do |f| %>
 			<%= render 'shared/error_messages', object: f.object %>
 			<div class="main-rating">
@@ -20,9 +19,9 @@
 			</div>
 			<%= f.hidden_field :game_id, value: game.id %>
 			<%= f.hidden_field :score, id: "rating-value" %>
-			<%= f.text_field :content, class: "textarea" %>
-			<%= f.submit "保存", class: "review_button" %>
-			<%= link_to "他のレビューを見る", game_reviews_path(game), class: "other_review_link" %>
+			<%= f.text_area :content, class: "review_textarea", placeholder: "レビューを書く"  %>
+			<%= f.submit "保存", class: "btn filled btn-save-review review_button" %>
+			<%= link_to "全てのレビュー", game_reviews_path(game), class: "btn filled btn-all-review other_review_link" %>
 		<% end %>
 	</div>
 </div>

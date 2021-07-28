@@ -1,17 +1,31 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'posts/post' %>
+<% end %>
+
 <li class="post_list_content">
   <div class="post_user_wrapper">
-    <%= link_to(user_path(post.user), class: 'post_user_content') do %>
-      <%= gravatar_for(post.user, size: 50) %>
-      <%= post.user.name %>
-    <% end %>
+    <div class="user_icon_wrapper">
+      <%= link_to(user_path(post.user), class: 'post_user_content') do %>
+        <%= gravatar_for(post.user, size: 50) %>
+      <% end %>
+    </div>
+    <div class="post_contents">
+      <div class="user_name_text">
+        <%= post.user.name %>
+      </div>
+      <div class="post_timestamp_wrapper">
+        <%= time_ago_in_words(post.created_at) %>前の投稿
+      </div>
+      <div class="post_content_wrapper">
+        <%= simple_format(post.content) %>
+      </div>
+      <% if current_user?(post.user) %>
+        <div class="post_delete_icon_wrapper">
+          <%= link_to post, method: :delete, id: "delete_button", data: { confirm: "本当に削除しますか？" } do %>
+            <i class="fas fa-trash-alt trash-icon"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="post_content_wrapper">
-    <%= post.content %>
-  </div>
-  <div class="post_timestamp_wrapper">
-    <%= time_ago_in_words(post.created_at) %> ago
-  </div>
-  <% if current_user?(post.user) %>
-      <%= link_to "delete", post, method: :delete, id: "delete_button", data: { confirm: "You sure?" } %>
-  <% end %>
 </li>

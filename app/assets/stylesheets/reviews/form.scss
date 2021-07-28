@@ -1,12 +1,9 @@
+@import "modules/variables";
+@import "modules/button";
 
 .review_container {
-	width: 50%;
-	margin: 40px auto;
+	width: 70%;
 	text-align: left;
-}
-
-.reveiw_title {
-	font-size: 25px;
 }
 
 .main-rating {
@@ -23,11 +20,12 @@
 	}
 }
 
-.textarea {
+.review_textarea {
 	border: 1px solid black;
 	resize: none;
   width: 100%;
   height: 100px;
+	padding: 10px;
 }
 
 .review_button {
@@ -39,4 +37,12 @@
 .other_review_link {
 	text-decoration: none;
 	text-align: right;
+}
+
+.btn-save-review {
+	// width: 30%;
+}
+
+.btn-all-review {
+	// width: 50%;
 }
