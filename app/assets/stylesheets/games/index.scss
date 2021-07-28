@@ -1,5 +1,7 @@
+@import "modules/variables";
+@import "modules/button";
 @import "shared/game_card.scss";
-$cBlack:#485460;
+// $cBlack:#485460;
 
 .button {
 	border: solid 1px $cBlack;
@@ -27,11 +29,7 @@ $cBlack:#485460;
 	display: flex;
 	justify-content: center;
 	color: $cBlack;
-}
-
-.search_title {
-	font-size: 18px;
-	padding: 4px 0;
+	margin-top: 50px;
 }
 
 .search_field_type {
@@ -42,6 +40,11 @@ $cBlack:#485460;
 .search_field_btn {
 	border: solid 1px $cBlack;
 	padding: 4px 10px;
+
+	&:hover {
+		color: $cWhite;
+		background-color: $cBlack;
+	}
 }
 
 .games_container {

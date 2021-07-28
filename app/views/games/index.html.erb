@@ -2,7 +2,7 @@
     <%= stylesheet_link_tag 'games/index' %>
 <% end %>
 
-<% provide(:title, 'All Games') %>
+<% provide(:title, 'Games') %>
 <h1 class="games_index_title">GAMES</h1>
 
 <% if current_user.admin? %>
@@ -12,10 +12,9 @@
 <% end %>
 
 <div class="search_field">
-	<p class="search_title">検索：</p>
 	<%= form_tag(games_path, :method => 'get') do %>
 		<%= text_field_tag :search, "",  {class: "search_field_type"}%>
-		<%= submit_tag 'Search', :name => nil, class: "search_field_btn" %>
+		<%= submit_tag '検索', :name => nil, class: "search_field_btn" %>
 	<% end %>
 </div>
 
