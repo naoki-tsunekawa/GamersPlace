@@ -1,5 +1,8 @@
+@import "modules/variables";
+@import "modules/button";
+
 .post_form_container {
-	width: 50%;
+	width: 100%;
 	margin: 40px auto;
 }
 
@@ -23,4 +26,8 @@
 	margin-top: 10px;
 	padding: 5px 60px;
 	border: 1px solid black;
+}
+
+.btn_post {
+	margin: 10px;
 }

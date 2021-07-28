@@ -1,13 +1,17 @@
+<% content_for :css do %>
+    <%= stylesheet_link_tag 'shared/post_form' %>
+<% end %>
+
 <div class="post_form_container">
   <%= form_for(@post) do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="post_content_field">
-      <%= f.text_area :content, placeholder: "new post!!" %>
+      <%= f.text_area :content, placeholder: "掲示板へ投稿する(300字以内)", maxlength: "300" %>
       <%= f.hidden_field :user_id, :value => current_user.id %>
       <%= f.hidden_field :game_id, :value => @game.id %>
     </div>
     <div class="post_btn_wrapper">
-      <%= f.submit "Post", class: "post_btn" %>
+      <%= f.submit "投稿する", class: "btn btn_post filled" %>
     </div>
   <% end %>
 </div>

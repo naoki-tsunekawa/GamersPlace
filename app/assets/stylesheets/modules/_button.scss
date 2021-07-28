@@ -4,11 +4,12 @@
   background-color: $cWhite;
   border: 1px solid $cBlack;
   padding: 10px 40px;
-  margin: 50px auto 10px;
+  // margin: 50px auto 10px;
   cursor: pointer;
   transition: all 0.3s;
   color: $cBlack;
   text-decoration: none !important;
+  text-align: center;
 
   &.float:hover {
     background-color: $cBlack;

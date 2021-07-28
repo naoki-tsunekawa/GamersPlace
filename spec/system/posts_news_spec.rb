@@ -14,7 +14,7 @@ RSpec.describe "PostsNews", type: :system do
 
   scenario 'Posting failure' do
     fill_in 'post_content', with: ' '
-    click_on 'Post'
+    click_on '投稿する'
     aggregate_failures do
       expect(current_path).to eq game_path(Game.last)
       expect(has_css?('.alert-danger')).to be_truthy
@@ -23,7 +23,7 @@ RSpec.describe "PostsNews", type: :system do
 
   scenario 'Posting success' do
     fill_in 'post_content', with: 'FooBar'
-    click_on 'Post'
+    click_on '投稿する'
     aggregate_failures do
         expect(current_path).to eq game_path(Game.last)
         expect(has_css?('.alert-success')).to be_truthy

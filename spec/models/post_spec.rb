@@ -20,8 +20,8 @@ RSpec.describe Post, type: :model do
     expect(post).to be_invalid
   end
 
-  it "is invalid with 141-letter mails" do
-    post.content = "a" * 141
+  it "is invalid with 300-letter mails" do
+    post.content = "a" * 301
     expect(post).to be_invalid
   end
 
