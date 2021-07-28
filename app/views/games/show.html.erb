@@ -31,8 +31,10 @@
 	</div>
 	<%= render 'shared/post_form' %>
 	<div class="post_container">
-		<% if @game.posts.any? %>
-      <h3>Posts (<%= @game.posts.count %>)</h3>
+		<% if @game.posts.count == 0 %>
+			<h3>現在の投稿は0件です</h3>
+		<% else %>
+			<h3>Posts (<%= @game.posts.count %>)</h3>
       <ol class="posts_list">
         <%= render @posts %>
       </ol>
