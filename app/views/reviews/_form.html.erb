@@ -20,8 +20,8 @@
 			<%= f.hidden_field :game_id, value: game.id %>
 			<%= f.hidden_field :score, id: "rating-value" %>
 			<%= f.text_area :content, class: "review_textarea", placeholder: "レビューを書く"  %>
-			<%= f.submit "保存", class: "btn filled btn-save-review review_button" %>
-			<%= link_to "全てのレビュー", game_reviews_path(game), class: "btn filled btn-all-review other_review_link" %>
+			<%= f.submit "保存", class: "btn filled btn-save-review" %>
+			<%= link_to "全てのレビュー", game_reviews_path(game), class: "btn filled btn-all-review" %>
 		<% end %>
 	</div>
 </div>

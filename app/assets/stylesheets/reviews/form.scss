@@ -1,15 +1,10 @@
 @import "modules/variables";
 @import "modules/button";
 
-.review_container {
-	width: 70%;
-	text-align: left;
-}
-
+// 共通部分（スマホ基準）
 .main-rating {
 	display: flex;
 	margin-top: 10px;
-	font-size: 20px;
 
 	.ratings {
 		color: #ffcc00;
@@ -23,26 +18,45 @@
 .review_textarea {
 	border: 1px solid black;
 	resize: none;
-  width: 100%;
-  height: 100px;
+	width: 100%;
+	height: 100px;
 	padding: 10px;
 }
 
-.review_button {
-	margin-top: 10px;
-	padding: 5px 60px;
-	border: 1px solid black;
-}
-
-.other_review_link {
-	text-decoration: none;
-	text-align: right;
-}
-
 .btn-save-review {
-	// width: 30%;
+	text-align: center;
+	margin: 10px;
+	padding: 5px 30px;
 }
 
 .btn-all-review {
-	// width: 50%;
+	margin-top: 10px;
+	margin: 10px;
+	padding: 5px 30px;
 }
+
+// PC表示時
+@media (min-width: 1080px) {
+	.review_container {
+		width: 70%;
+		text-align: left;
+	}
+
+	.btn-save-review {
+		width: 100%;
+		text-align: center;
+		padding: 5px;
+	}
+
+	.btn-all-review {
+		margin-top: 10px;
+		width: 100%;
+		padding: 5px;
+	}
+}
+
+// タブレット表示時
+@media (min-width: 780px) {
+
+}
+
