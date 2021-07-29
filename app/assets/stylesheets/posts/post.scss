@@ -1,10 +1,12 @@
 @import "modules/variables";
 
+// 共通部分（スマホ基準）
 .post_list_content {
 	list-style-type: none;
 	border: solid 1px #2c3e50;
-	margin: 10px;
+	margin-bottom: 10px;
 	width: 100%;
+	text-align: left;
 }
 
 .post_user_wrapper {
@@ -49,4 +51,16 @@
 .trash-icon {
 	font-size: 1.2rem;
 	color: $cBlack;
+}
+
+
+// PC表示時
+@media (min-width: 1080px) {
+
+}
+
+
+// タブレット表示時
+@media (min-width: 780px) {
+
 }
