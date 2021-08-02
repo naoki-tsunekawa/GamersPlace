@@ -1,48 +1,100 @@
+$cBlack: #3e3e3e;
 $cWhite: #ecf0f1;
-$cBlack:#3e3e3e;
+$cMenuOpen: $cWhite;
+$cMenuClose: $cWhite;
 
-.header-container {
-	height: 200px;
-	display: flex;
-	background-color: $cBlack;
+#container {
+	position: relative;
+	background-color: white;
+	// 画面のフルスクリーンを高さに指定する
+	height: 100vh;
+	// 表示の優先度を設定する(モバイルメニューの表示を消すため)
+	z-index: 100;
+	// アニメーションをつける
+	transition: all 0.5s;
 }
 
-// title
-header a {
-	text-decoration: none;
-	line-height: 50px;
-	color: #b3b3b3;
+.header	{
+	background-color: $cWhite;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: $cBlack;
+	padding: 20px;
+}
 
-	&:hover {
-		color: $cWhite;
+// メニューオープン時
+.menu-open {
+	& #container {
+		transform: translateX(-250px);
+		box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+	}
+}
+
+
+// button (モバイルメニューアイコン)
+.mobile-menu__btn{
+	// 背景 transparent:透明
+	background-color: transparent;
+	//ボタンのボーダーを非表示
+	border: none;
+	// buttonタグにデフォルトで設定されているoutlineを無効にする
+	outline: none !important;
+	cursor: pointer;
+
+	& > span {
+		background-color: $cWhite;
+		width: 35px;
+		height: 2px;
+		// spanはinline要素なのでwidthおよびheightを指定するためには
+		// blockもしくはinlineblockに変更してあげる必要がある
+		display: block;
+		// 棒線の下側に余白をつける
+		margin-bottom: 9px;
+		// アニメーションの監視
+		transition: transform 0.7s;
+
+		// 一番最後の棒線の余白を無くす
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+// メニューが開かれている時
+.menu-open {
+	// background-color: $cBlack;
+
+	// menu-openのクラスが付与されている場合の.mobile-menu__btnのスタイル
+	& .mobile-menu__btn {
+		& > span {
+			background-color: $cMenuOpen;
+
+			// 棒線の挙動(アニメーション)
+			&:nth-child(1) {
+				transform: translateY(11px) rotate(135deg);
+			}
+
+			&:nth-child(2) {
+				transform: translateX(-18px)scaleX(0);
+			}
+
+			&:nth-child(3) {
+				transform: translateY(-11px) rotate(-135deg);
+			}
+		}
 	}
 }
 
 .text-title {
-	font-size: 40px;
+	font-size: 2rem;
 	letter-spacing: 2px;
-	margin: 70px 60px;
 	font-weight: bold;
 }
 
 .logo_text {
 	color: $cWhite;
+	text-decoration: none;
 }
 
-// navbar
-.header_nav {
-	margin-left: auto;
-	width: auto;
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-}
-
-.nav-text {
-	display: inline;
-	padding: 0 20px;
-
-	&:hover {
-		text-decoration: underline;
-	}
-}

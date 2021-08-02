@@ -36,7 +36,7 @@ RSpec.describe "PostInterfaces", js: true, type: :system do
     end.to change(Post, :count).by(-1)
 
     # 違うユーザーで掲示板にアクセス (削除リンクがないことを確認)
-    click_on "Log out"
+    # click_on "Log out"
     login_as(other_user)
     visit game_path(Game.last)
     expect(page).not_to have_link "delete"

@@ -1,22 +1,12 @@
-<header>
-	<div class="header-container">
-		<div class="text-title">
-			<%= link_to "Gamers Plays", root_path, class: "logo_text", id: "logo" %>
-		</div>
-		<nav class="header_nav">
-			<ul class="navbar parent-nav">
-				<li class="nav-text"><%= link_to "Home", root_path %></li>
-				<% if logged_in? %>
-					<li class="nav-text"><%= link_to "Games", games_path %></li>
-					<li class="nav-text"><%= link_to "Users", users_path %></li>
-					<li class="nav-text"><%= link_to "Profile", current_user %></li>
-					<li class="nav-text"><%= link_to "Settings", edit_user_path(current_user) %></li>
-					<li class="nav-text"><%= link_to "Log out", logout_path, method: :delete %></li>
-        <% else %>
-          <li class="nav-text"><%= link_to "Log in", login_path %></li>
-					<li class="nav-text"><%= link_to "Sign up", signup_path %></li>
-        <% end %>
-			</ul>
-		</nav>
+<header class="header">
+	<div class="text-title">
+		<%= link_to "Gamers Plays", root_path, class: "logo_text", id: "logo" %>
 	</div>
+		<button class="mobile-menu__btn">
+			<span></span>
+			<span></span>
+			<span></span>
+		</button>
 </header>
+
+<%= javascript_include_tag "header.js" %>

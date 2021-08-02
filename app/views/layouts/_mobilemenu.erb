@@ -1,0 +1,15 @@
+<nav class="mobile-menu">
+	<ul class="mobile-menu__main">
+		<li class="mobile-menu__item"><%= link_to "Home", root_path, class: "mobile-menu__link" %></li>
+		<% if logged_in? %>
+			<li class="mobile-menu__item"><%= link_to "Games", games_path, class: "mobile-menu__link" %></li>
+			<li class="mobile-menu__item"><%= link_to "Users", users_path, class: "mobile-menu__link" %></li>
+			<li class="mobile-menu__item"><%= link_to "Profile", current_user, class: "mobile-menu__link" %></li>
+			<li class="mobile-menu__item"><%= link_to "Settings", edit_user_path(current_user), class: "mobile-menu__link" %></li>
+			<li class="mobile-menu__item"><%= link_to "Log out", logout_path, method: :delete, class: "mobile-menu__link" %></li>
+		<% else %>
+			<li class="mobile-menu__item"><%= link_to "Log in", login_path, class: "mobile-menu__link" %></li>
+			<li class="mobile-menu__item"><%= link_to "Sign up", signup_path, class: "mobile-menu__link" %></li>
+		<% end %>
+	</ul>
+</nav>
