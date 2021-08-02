@@ -18,5 +18,6 @@
  *= require common/messages
  *= require common/error_messages
  *= require common/footer
+ *= require common/mobilemenu
  */
 

@@ -1,0 +1,43 @@
+$cBlack: #3e3e3e;
+$cWhite: #ecf0f1;
+$cMenuOpen: $cBlack;
+$cMenuClose: $cBlack;
+
+.mobile-menu {
+	// 背面に表示
+	position: fixed;
+	// 位置調整
+	right: 0;
+	top: 60px;
+
+	&__main {
+		padding: 0;
+		// 3Dアニメーション(親要素)
+		perspective: 2000px;
+		transform-style: preserve-3d;
+		z-index: -1;
+	}
+
+	&__item {
+		list-style: none;
+		display: block;
+		transform: translate3d(0, 0, -1000px);
+		padding: 0 40px;
+		transition: transform 0.3s, opacity 0.2s;
+		// opacity: 0;
+	}
+
+	&__link {
+		display: block;
+		margin-top: 30px;
+		color: $cBlack;
+		text-decoration: none;
+		font-size: 1.4rem;
+		font-weight: bold;
+
+		&:hover {
+			text-decoration: underline;
+			opacity: 0.8;
+		}
+	}
+}
