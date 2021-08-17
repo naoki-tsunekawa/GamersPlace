@@ -24,7 +24,6 @@ $cMenuClose: $cBlack;
 		transform: translate3d(0, 0, -1000px);
 		padding: 0 40px;
 		transition: transform 0.3s, opacity 0.2s;
-		// opacity: 0;
 	}
 
 	&__link {
@@ -32,7 +31,7 @@ $cMenuClose: $cBlack;
 		margin-top: 30px;
 		color: $cBlack;
 		text-decoration: none;
-		font-size: 1.4rem;
+		font-size: 1.8rem;
 		font-weight: bold;
 
 		&:hover {

@@ -1,7 +1,6 @@
 @import "shared/game_card.scss";
 @import "modules/variables";
 @import "modules/button";
-// $cBlack:#485460;
 
 .home_user_details_wrapper{
 	width: 380px;
@@ -10,14 +9,14 @@
 
 .home-container {
 	width: auto;
-	height: 750px;
+	height: 800px;
 	text-align: center;
 	color: white;
 }
 
 .bg-container {
 	width: auto;
-	height: 750px;
+	height: 100%;
 	background-image: image-url('Gamersplace_home_img.jpg');
 	background-size:  cover;
 }
@@ -33,9 +32,8 @@
 	text-align: left;
 }
 
-.btn-signup {
-	color: white;
-	text-decoration: none;
+.btn {
+	padding: 10px 40px;
 }
 
 .home-container h1 {

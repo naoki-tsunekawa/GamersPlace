@@ -3,8 +3,10 @@
 		<li class="mobile-menu__item"><%= link_to "Home", root_path, class: "mobile-menu__link" %></li>
 		<% if logged_in? %>
 			<li class="mobile-menu__item"><%= link_to "Games", games_path, class: "mobile-menu__link" %></li>
-			<li class="mobile-menu__item"><%= link_to "Users", users_path, class: "mobile-menu__link" %></li>
-			<li class="mobile-menu__item"><%= link_to "Profile", current_user, class: "mobile-menu__link" %></li>
+			<% if current_user.admin? %>
+				<li class="mobile-menu__item"><%= link_to "Users", users_path, class: "mobile-menu__link" %></li>
+			<% end %>
+			<%# <li class="mobile-menu__item"><%= link_to "Profile", current_user, class: "mobile-menu__link" </li> %>
 			<li class="mobile-menu__item"><%= link_to "Settings", edit_user_path(current_user), class: "mobile-menu__link" %></li>
 			<li class="mobile-menu__item"><%= link_to "Log out", logout_path, method: :delete, class: "mobile-menu__link" %></li>
 		<% else %>
