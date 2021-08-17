@@ -22,15 +22,6 @@ $cMenuClose: $cWhite;
 	padding: 20px;
 }
 
-// メニューオープン時
-.menu-open {
-	& #container {
-		transform: translateX(-250px);
-		box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
-	}
-}
-
-
 // button (モバイルメニューアイコン)
 .mobile-menu__btn{
 	// 背景 transparent:透明
@@ -62,6 +53,16 @@ $cMenuClose: $cWhite;
 
 // メニューが開かれている時
 .menu-open {
+
+	.mobile-menu__cover {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	& #container {
+		transform: translateX(-250px);
+		box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+	}
 	// background-color: $cBlack;
 
 	// menu-openのクラスが付与されている場合の.mobile-menu__btnのスタイル
