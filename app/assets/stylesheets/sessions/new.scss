@@ -9,7 +9,7 @@
 
 .login_container {
 	width: 40%;
-	height: 550px;
+	height: 68vh;
 	margin: 10px auto;
 }
 
@@ -53,4 +53,19 @@
     margin-left: 10px;
     font-weight: normal;
   }
+}
+
+.btn {
+	margin-top: 20px;
+	padding: 10px 30px;
+}
+
+.signup_link_text > a {
+	text-decoration: none;
+	color: $cBlack;
+
+	&:hover {
+		border-bottom: 1px $cBlack solid;
+		cursor: pointer;
+	}
 }
