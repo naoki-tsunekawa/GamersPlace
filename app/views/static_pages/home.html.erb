@@ -5,17 +5,19 @@
 <% provide(:title) %>
 <% if logged_in? %>
 	<%# ログイン時 %>
-	<div class="home_user_details_wrapper"><%= render 'users/user_details' %></div>
-	<div class="games_container">
-		<% if @favorite_list.present? %>
-			<%# お気に入りのGameを表示 %>
-			<% @favorite_list.each do |game| %>
-				<%= render 'shared/game_card', game: game %>
-			<% end %>
-		<% else %>
-			<%# お気に入りのGameが一件も無い場合の表示 %>
+	<div class="home-container">
+		<div class="home_user_details_wrapper"><%= render 'users/user_details' %></div>
+		<div class="games_container">
+			<% if @favorite_list.present? %>
+				<%# お気に入りのGameを表示 %>
+				<% @favorite_list.each do |game| %>
+					<%= render 'shared/game_card', game: game %>
+				<% end %>
+			<% else %>
+				<%# お気に入りのGameが一件も無い場合の表示 %>
 
-		<% end %>
+			<% end %>
+		</div>
 	</div>
 
 <% else %>
@@ -26,7 +28,7 @@
 				<h1 class="home_text">Gamers Plays</h1>
 				<%= link_to "新規登録", signup_path, class: "btn filled" %>
 				<div class="home_message_container">
-					<p>あなたのお気に入りのゲームを共有して</p>
+					<p>あなたのお気に入りのゲームを見つけて</p>
 					<p>新たな仲間を見つけてみませんか？</p>
 				</div>
 			</div>

@@ -27,7 +27,7 @@ RSpec.describe "UsersLogins", type: :system do
       expect(current_path).to eq user_path(user)
       expect(page).to have_no_link 'Log in'
       expect(page).to have_link 'Log out', href: logout_path
-      expect(page).to have_link 'Profile', href: user_path(user)
+      # expect(page).to have_link 'Profile', href: user_path(user)
     end
 
     # ログアウト後のURLテスト
@@ -36,7 +36,7 @@ RSpec.describe "UsersLogins", type: :system do
       expect(current_path).to eq root_path
       expect(page).to have_link 'Log in', href: login_path
       expect(page).to have_no_link 'Log out'
-      expect(page).to have_no_link 'Profile'
+      # expect(page).to have_no_link 'Profile'
     end
   end
 end

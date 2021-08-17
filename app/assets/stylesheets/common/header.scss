@@ -6,8 +6,6 @@ $cMenuClose: $cWhite;
 #container {
 	position: relative;
 	background-color: white;
-	// 画面のフルスクリーンを高さに指定する
-	height: 100vh;
 	// 表示の優先度を設定する(モバイルメニューの表示を消すため)
 	z-index: 100;
 	// アニメーションをつける
