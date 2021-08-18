@@ -28,11 +28,12 @@ services:
     ports:
       - 80:80
 
-  ## テスト環境
-  # chrome:
-  #   image: selenium/standalone-chrome:latest
-  #   ports:
-  #     - 4444:4444
+  # テスト環境
+  chrome:
+    image: selenium/standalone-chrome:latest
+    shm_size: 256m
+    ports:
+      - 4444:4444
 
 volumes:
   db-volume:
@@ -40,6 +41,46 @@ volumes:
   tmp-data:
   log-data:
 # ============================================
+
+# ============= 本番環境 ==================
+# version: '3'
+# services:
+#   app:
+#     build:
+#       context: .
+#     # =========ローカルと本番切り替え===========
+#     # command: bundle exec puma -C config/puma.rb
+#     command: bundle exec puma -C config/puma.rb -e production
+#     # ======================================
+#     volumes:
+#       - .:/GamersPlace
+#       - public-data:/GamersPlace/public
+#       - tmp-data:/GamersPlace/tmp
+#       - log-data:/GamersPlace/log
+#     networks:
+#       - GamersPlace-network
+#   web:
+#     build:
+#       context: containers/nginx
+#     volumes:
+#       - public-data:/GamersPlace/public
+#       - tmp-data:/GamersPlace/tmp
+#     ports:
+#       - 80:80
+#     depends_on:
+#       - app
+#     networks:
+#       - GamersPlace-network
+# volumes:
+#   mysql-data:
+#   public-data:
+#   tmp-data:
+#   log-data:
+
+# networks:
+#   GamersPlace-network:
+#     external: true
+# ======================================
 
 # ============ 開発環境-old ===================
 # version: '3'
