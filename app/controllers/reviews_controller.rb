@@ -1,6 +1,7 @@
 class ReviewsController < ApplicationController
   # レビュー機能をログインしているユーザのみ使用可能
   before_action :logged_in_user, only: [:create, :index]
+  before_action :correct_user, only: [:destroy]
 
   def index
     @game = Game.find(params[:game_id])
@@ -27,4 +28,5 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:game_id, :score, :content)
   end
+
 end

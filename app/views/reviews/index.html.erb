@@ -23,46 +23,44 @@
 					</div>
 				</div>
 			</div>
-			<div class="card-footer">
-				<%= link_to game_path(@game), class: "button btn-review" do %>
+			<div class="review_btn_wrapper">
+				<%= link_to game_path(@game), class: "btn filled review_btn" do %>
 					レビューを書く
 				<% end %>
 			</div>
-			<table class="reviews_table">
-				<thead>
-					<tr class="reviews_contents_title">
-						<th class="reviews_user_text">ユーザー</th>
-						<th class="reviews_score_text">点数</th>
-						<th class="reviews_content_text">内容</th>
-					</tr>
-				</thead>
-				<tbody>
-					<% @reviews.each do |review| %>
-						<tr>
-							<td><%= review.user.name %></td>
-							<td><%= review.score %></td>
-							<td><%= review.content %></td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-			<% @reviews.each do |review| %>
-				<div class="review_contents_wrapper">
-					<div class="review_contents">
-						<div class="reviews_user_text">
-							<%= review.user.name %>
-						</div>
-						<div class="reviews_create_time_text">
-							<%= review.created_at %>
-						</div>
-						<div class="reviews_score_text">
-							<%= review.score %>
-						</div>
-						<div class="reviews_content_text">
-							<%= review.content %>
+			<% if @game.reviews.count == 0 %>
+				<%# レビューされていない場合の表示 %>
+				<div class="not_reviewed_contents_wrapper">
+					この掲示板にはまだレビューはありません。
+				</div>
+			<% else %>
+				<%# レビューされている時の表示 %>
+				<% @reviews.each do |review| %>
+					<div class="review_contents_wrapper">
+						<div class="review_contents">
+							<div class="reviews_user_info">
+								<div class="reviews_user_img">
+									<%= gravatar_for(review.user, size: 30) %>
+								</div>
+								<div class="reviews_user_text">
+									<%= review.user.name %>
+								</div>
+								<div class="reviews_create_time_text">
+									<%= review.created_at.to_s(:datetime_jp) %>
+								</div>
+							</div>
+							<div class="reviews_score_text">
+								<div class="star-rating">
+									<div class="star-rating-front" style="width: <%= review.user_review_score_percentage %>%">★★★★★</div>
+									<div class="star-rating-back">★★★★★</div>
+								</div>
+							</div>
+							<div class="reviews_content_text">
+								<%= simple_format(review.content) %>
+							</div>
 						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
     </div>
   </div>

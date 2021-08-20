@@ -1,10 +1,14 @@
 @import "modules/variables";
 @import "modules/button";
 
+.section {
+	min-height: 100vh;
+	max-height: 100%;
+}
+
 .reviews_container {
 	width: 50%;
 	margin: 50px auto;
-
 }
 
 .reviews_card {
@@ -28,7 +32,7 @@
 	position: relative;
 	width: 5em;
 	height: 1em;
-	font-size: 25px;
+	font-size: 18px;
 }
 
 .star-rating-front {
@@ -49,25 +53,51 @@
 	opacity: 0.6;
 }
 
-.reviews_table {
-	width: 100%;
-	margin-top: 50px;
-	padding: 10px;
-	border: 1px solid black;
+// btn
+.review_btn_wrapper {
+	text-align: center;
 }
 
-.reviews_contents_title {
-	text-align: left;
+.review_btn {
+	margin: 30px 0;
+	padding: 10px 20px;
+}
+
+// レビューユーザー一覧
+.reviews_user_info {
+	margin-top: 30px;
+}
+
+.reviews_user_img {
+	display: inline-block;
+
+	.gravatar {
+		border-radius: 100%;
+	}
 }
 
 .reviews_user_text {
-	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.reviews_create_time_text {
+	display: inline-block;
+	font-size: 0.9rem;
+	margin-left: 20px;
+	vertical-align: top;
 }
 
 .reviews_score_text {
-	width: 20%;
+	margin: 5px;
 }
 
 .reviews_content_text {
-	width: 50%;
+	margin-top: 30px;
+	padding-bottom: 20px;
+	width: 100%;
+	height: auto;
+	border-bottom: 1px $cBlack solid;
+	word-break : break-all;
 }
+

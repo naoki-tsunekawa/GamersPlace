@@ -19,5 +19,8 @@ module GamersPlace
     # JavaScriptが無効になっていたときのための設定
     # 認証トークンをremoteフォームに埋め込む
     config.action_view.embed_authenticity_token_in_remote_forms = true
+
+    # タイムゾーンの設定を追加
+    config.time_zone = 'Tokyo'
   end
 end
