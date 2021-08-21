@@ -4,21 +4,26 @@
 
 <section class="section">
   <div class="reviews_container">
-    <div class="columns">
+    <div>
 			<div class="reviews_card">
-				<header class="reviews_card_header">
-					<p class="card_header_title">
-						<%= @game.title %>
-					</p>
-				</header>
-				<div class="reviews_card_content">
-					<div class="content average-score">
-						<div class="star-rating">
-							<div class="star-rating-front" style="width: <%= @game.review_score_percentage %>%">★★★★★</div>
-							<div class="star-rating-back">★★★★★</div>
+				<div class="reviews_card_header">
+					<div class="card__header">
+						<div class="game_title_wrapper">
+							<%= @game.title %>
 						</div>
-						<div class="average-score-display">
-							<%= @game.avg_score %>点（<%= @game.reviews.count %>件のレビュー）
+						<div class="reviews_card_content">
+							<div class="content average-score">
+								<div class="star-rating">
+									<div class="star-rating-front" style="width: <%= @game.review_score_percentage %>%">★★★★★</div>
+									<div class="star-rating-back">★★★★★</div>
+								</div>
+								<div class="average-score-display">
+									<%= @game.avg_score %>点（<%= @game.reviews.count %>件のレビュー）
+								</div>
+							</div>
+						</div>
+						<div class="card__thumbnail">
+							<img class="card__img" src="<%= "#{@game.game_image}" %>">
 						</div>
 					</div>
 				</div>
