@@ -15,7 +15,11 @@
 				<% end %>
 			<% else %>
 				<%# お気に入りのGameが一件も無い場合の表示 %>
-
+				<div class="home_nfavorite_container">
+					<div class="home_nfavorite_text">登録されているお気に入りのゲームが一件もありません。</div>
+					<div class="home_nfavorite_text">お気に入りのゲームを見つけよう。</div>
+					<div><%= link_to "ゲーム一覧へ", games_path, class: "btn filled" %></div>
+				</div>
 			<% end %>
 		</div>
 	</div>
